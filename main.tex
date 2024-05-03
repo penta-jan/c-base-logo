@@ -15,20 +15,15 @@
 }
     \begin{tikzpicture}%
         \def\radi{10}%     
-        \filldraw[black] (0:0) circle (\radi);
+        \filldraw[black] (0:0) circle (\radi-0.3);
         \draw[white, line width=1.6cm] (0:0) pic{carc=-55:90:\radi-0.72}; 
-        \foreach [count=\i] \ii in {70,74,78}
+        \foreach [count=\i] \ii in {%
+        70,74,78,100,
+        114,118,...,170,
+        182,186,
+        202,206,...,250,
+        266,270,...,304}
             \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2}; 
-        \foreach [count=\i] \ii in {100}
-            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2}; 
-        \foreach [count=\i] \ii in {114,118,...,170}
-            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2};    
-        \foreach [count=\i] \ii in {182,186}
-            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2};    
-        \foreach [count=\i] \ii in {202,206,...,250}
-            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2};   
-        \foreach [count=\i] \ii in {266,270,...,304}
-            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2};    
         
         \draw[white, line width=3.05cm] (0:0) pic{carc=50:-55:\radi-3};
         
