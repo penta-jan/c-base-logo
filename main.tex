@@ -18,17 +18,17 @@
         \filldraw[black] (0:0) circle (\radi);
         \draw[white, line width=1.6cm] (0:0) pic{carc=-55:90:\radi-0.72}; 
         \foreach [count=\i] \ii in {70,74,78}
-            \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85}; 
+            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2}; 
         \foreach [count=\i] \ii in {100}
-            \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85}; 
+            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2}; 
         \foreach [count=\i] \ii in {114,118,...,170}
-            \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85};    
+            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2};    
         \foreach [count=\i] \ii in {182,186}
-            \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85};    
+            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2};    
         \foreach [count=\i] \ii in {202,206,...,250}
-            \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85};   
+            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2};   
         \foreach [count=\i] \ii in {266,270,...,304}
-            \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85};    
+            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2};    
         
         \draw[white, line width=3.05cm] (0:0) pic{carc=50:-55:\radi-3};
         
@@ -36,7 +36,7 @@
 
   
         \draw[white, line width=1.8cm] (0:0) 
-            pic{carc=80:135:\radi-3.5};
+            pic{carc=82:135:\radi-3.5};
         \draw[white, line width=1.8cm] (0:0) 
             pic{carc=65:74:\radi-3.5};
         \draw[white, line width=1.8cm] (0:0) 
@@ -54,7 +54,7 @@
         
         \foreach [count=\i] \ii in {1,2,3,4,5}
             \draw[black, line width=0.7cm] (0:0) 
-            pic{carc=72*\i+18:72*\i+36+18:\radi-7};
+            pic{carc=72*\i+27:72*\i+36+27:\radi-7};
 
         \filldraw[black] (0:0) circle (\radi-7.5);
 
@@ -64,7 +64,6 @@
         \filldraw[white] (0:0) circle (\radi-8.5);
         \filldraw[black] (0:0) circle (\radi-8.8);
         \filldraw[white] (0:0) circle (\radi-9.8);
-
-        
+     
     \end{tikzpicture}
 \end{document}
