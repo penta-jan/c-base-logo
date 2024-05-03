@@ -1,13 +1,11 @@
 \documentclass{standalone}
-\usepackage{tikz}>
+\usepackage{tikz}
 \usepackage{calc}
 \begin{document}
-
 %% c-base logo nachgebaut von penta.
 %% alles nur geschätze Winkel und Abstände :/
 %% um den code zu verstehen, einfach mal einzelne Teile auskommentieren und wieder einkommentieren (ctrl-#) und dann mal \draw[white] durch \draw[red] ersetzen, dann sieht man, was was ist.
 %% viel Spaß damit.
-
 \tikzset{
   pics/carc/.style args={#1:#2:#3}{
     code={
@@ -19,12 +17,11 @@
         \def\radi{10}%     
         \filldraw[black] (0:0) circle (\radi);
         \draw[white, line width=1.6cm] (0:0) pic{carc=-55:90:\radi-0.72}; 
-
         \foreach [count=\i] \ii in {70,74,78}
             \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85}; 
         \foreach [count=\i] \ii in {100}
             \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85}; 
-        \foreach [count=\i] \ii in {120,124,...,170}
+        \foreach [count=\i] \ii in {114,118,...,170}
             \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85};    
         \foreach [count=\i] \ii in {182,186}
             \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-2:\radi-1.85};    
