@@ -1,6 +1,7 @@
 \documentclass{standalone}
 \usepackage{tikz}
 \usepackage{calc}
+\usepackage{xcolor}
 \begin{document}
 %% c-base logo nachgebaut von penta.
 %% alles nur geschätze Winkel und Abstände :/
@@ -13,39 +14,49 @@
     }
   }
 }
+\definecolor{eins}{HTML}{FFFFFF} %% Ring 1  "core" - Mittelpunkt 
+\definecolor{zwei}{HTML}{FF00FF} %% Ring 2  "com"
+\definecolor{drei}{HTML}{00FFFF} %% Ring 3  "culture" vier Module
+\definecolor{vier}{HTML}{FF7F00} %% Ring 4  "creativ" fünf Module, quasi invertiert
+\definecolor{fuenf}{HTML}{AAFF00} %% Ring 5 "cience" "Fenster"
+\definecolor{sechs}{HTML}{C70039} %% Ring 6 "carbon" Ring um Mittelpunkt
+\definecolor{sieben}{HTML}{FFFF00} %% Ring 7 "clamp"  
+
     \begin{tikzpicture}%
         \def\radi{10}%     
         \filldraw[black] (0:0) circle (\radi-0.3);
+        
         \draw[white, line width=1.6cm] (0:0) pic{carc=-55:90:\radi-0.72}; 
+        
         \foreach [count=\i] \ii in {%
         70,74,78,100,
         114,118,...,170,
         182,186,
         202,206,...,250,
         266,270,...,304}
-            \draw[white, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2}; 
+            \draw[sieben, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2}; 
         
         \draw[white, line width=3.05cm] (0:0) pic{carc=50:-55:\radi-3};
         
         \draw[white, line width=2cm] (0:0) pic{carc=-90:0:\radi-3.5};
 
   
-        \draw[white, line width=1.8cm] (0:0) 
+        \draw[sechs, line width=1.8cm] (0:0) 
             pic{carc=82:135:\radi-3.5};
-        \draw[white, line width=1.8cm] (0:0) 
+        \draw[sechs, line width=1.8cm] (0:0) 
             pic{carc=65:74:\radi-3.5};
-        \draw[white, line width=1.8cm] (0:0) 
+        \draw[sechs, line width=1.8cm] (0:0) 
             pic{carc=53:62:\radi-3.5};
             
         \draw[black, line width=0.4cm] (0:0) 
             pic{carc=110:135:\radi-3.3};
 
         \foreach [count=\i] \ii in {1,2,3,4}
-            \draw[white, line width=1.5cm] (0:0) 
+            \draw[fuenf, line width=1.5cm] (0:0) 
             pic{carc=90*\i:90*\i+45:\radi-5.5};
 
 
-        \filldraw[white] (0:0) circle (\radi-6.5);
+        \filldraw[vier] (0:0) circle (\radi-6.5);
         
         \foreach [count=\i] \ii in {1,2,3,4,5}
             \draw[black, line width=0.7cm] (0:0) 
@@ -54,11 +65,11 @@
         \filldraw[black] (0:0) circle (\radi-7.5);
 
         \foreach [count=\i] \ii in {160,172,...,490}
-            \draw[white, line width=0.4cm] (0:0) pic{carc=\ii:\ii-8:\radi-8};   
+            \draw[drei, line width=0.4cm] (0:0) pic{carc=\ii:\ii-8:\radi-8};   
         
-        \filldraw[white] (0:0) circle (\radi-8.5);
+        \filldraw[zwei] (0:0) circle (\radi-8.5);
         \filldraw[black] (0:0) circle (\radi-8.8);
-        \filldraw[white] (0:0) circle (\radi-9.8);
+        \filldraw[eins] (0:0) circle (\radi-9.8);
      
     \end{tikzpicture}
 \end{document}
