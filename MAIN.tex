@@ -1,4 +1,5 @@
-\documentclass[14pt]{extarticle}
+\documentclass[14pt]{extarticle}  %% document requires XeLaTex.
+\usepackage[ngerman]{babel}
 \usepackage{geometry}
  \geometry{
  a4paper,
@@ -6,30 +7,25 @@
  left=20mm,
  top=20mm,
  }
-\usepackage{fontspec}
+
 \usepackage{standalone}
 \usepackage{tikz}
-\setmainfont{ceva-c2.ttf}
+
+\usepackage{fontspec}
+% % \setmainfont{ceva-c2.ttf}
+\setmainfont{Alegreya Sans}
+ 
 
 
-
-\definecolor{eins}{HTML}{FFFFFF} %% Ring 1  "core" - Mittelpunkt 
-\definecolor{zwei}{HTML}{FF00FF} %% Ring 2  "com"
-\definecolor{drei}{HTML}{00FFFF} %% Ring 3  "culture" vier Module
-\definecolor{vier}{HTML}{FF7F00} %% Ring 4  "creativ" fünf Module, quasi invertiert
-\definecolor{fuenf}{HTML}{AAFF00} %% Ring 5 "cience" "Fenster"
-\definecolor{sechs}{HTML}{C70039} %% Ring 6 "carbon" Ring um Mittelpunkt
-\definecolor{sieben}{HTML}{FFFF00} %% Ring 7 "clamp"  
-
+\definecolor{eins}{HTML}{FFFFFF}   %% Ring 1 "core"     - weiß - Mittelpunkt 
+\definecolor{zwei}{HTML}{FF0000}   %% Ring 2 "com"      - rot
+\definecolor{drei}{HTML}{FF7F00}   %% Ring 3  "culture" - orange - "Fenster"
+\definecolor{vier}{HTML}{AAFF00}   %% Ring 4  "creativ" - grün -  fünf Module, quasi invertiert
+\definecolor{fuenf}{HTML}{00FFFF}  %% Ring 5 "cience"  - blau - vier Module
+\definecolor{sechs}{HTML}{800080}  %% Ring 6 "carbon" -  violett Ring um Mittelpunkt
+\definecolor{sieben}{HTML}{4B0082} %% Ring 7 "clamp" -  indigo - viele Fenster
 
 
-% \newcommand{\Hrule}[1][.]{%
-%   % \par\addvspace{#2}%
-%   \begingroup\color{#1}%
-%   \hrule height 12pt
-%   \endgroup
-%   \addvspace{3pt}%
-% }
 
 \newcommand{\Hrule}[1][.]{%
 \begingroup\color{#1}%

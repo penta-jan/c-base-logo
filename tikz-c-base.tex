@@ -14,20 +14,23 @@
     }
   }
 }
-\definecolor{eins}{HTML}{FFFFFF} %% Ring 1  "core" - Mittelpunkt 
-\definecolor{zwei}{HTML}{FF00FF} %% Ring 2  "com"
-\definecolor{drei}{HTML}{00FFFF} %% Ring 3  "culture" vier Module
-\definecolor{vier}{HTML}{FF7F00} %% Ring 4  "creativ" fünf Module, quasi invertiert
-\definecolor{fuenf}{HTML}{AAFF00} %% Ring 5 "cience" "Fenster"
-\definecolor{sechs}{HTML}{C70039} %% Ring 6 "carbon" Ring um Mittelpunkt
-\definecolor{sieben}{HTML}{FFFF00} %% Ring 7 "clamp"  
+\definecolor{eins}{HTML}{FFFFFF}   %% Ring 1 "core"     - weiß - Mittelpunkt 
+\definecolor{zwei}{HTML}{FF0000}   %% Ring 2 "com"      - rot -  Ring um Mittelpunkt
+\definecolor{drei}{HTML}{FF7F00}   %% Ring 3  "culture" - orange - "Fenster" innen
+\definecolor{vier}{HTML}{AAFF00}   %% Ring 4  "creativ" - grün -  fünf Module, quasi invertiert
+\definecolor{fuenf}{HTML}{00FFFF}  %% Ring 5 "cience"  - blau - vier Module
+\definecolor{sechs}{HTML}{800080}  %% Ring 6 "carbon" -  violett - drei Module mit "Strich"
+\definecolor{sieben}{HTML}{4B0082} %% Ring 7 "clamp" -  indigo - viele "Fenster" außen
 
     \begin{tikzpicture}%
         \def\radi{10}%     
+
+        %% äußerer Radius
         \filldraw[black] (0:0) circle (\radi-0.3);
-        
+        % was wegnehmen / weiß übermalen
         \draw[white, line width=1.6cm] (0:0) pic{carc=-55:90:\radi-0.72}; 
-        
+
+        %% clamp - viele kleine Fenster
         \foreach [count=\i] \ii in {%
         70,74,78,100,
         114,118,...,170,
