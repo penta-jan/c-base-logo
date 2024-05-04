@@ -1,0 +1,148 @@
+\documentclass[14pt]{extarticle}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{fontspec}
+\usepackage{standalone}
+\usepackage{tikz}
+\setmainfont{ceva-c2.ttf}
+
+
+
+\definecolor{eins}{HTML}{FFFFFF} %% Ring 1  "core" - Mittelpunkt 
+\definecolor{zwei}{HTML}{FF00FF} %% Ring 2  "com"
+\definecolor{drei}{HTML}{00FFFF} %% Ring 3  "culture" vier Module
+\definecolor{vier}{HTML}{FF7F00} %% Ring 4  "creativ" fünf Module, quasi invertiert
+\definecolor{fuenf}{HTML}{AAFF00} %% Ring 5 "cience" "Fenster"
+\definecolor{sechs}{HTML}{C70039} %% Ring 6 "carbon" Ring um Mittelpunkt
+\definecolor{sieben}{HTML}{FFFF00} %% Ring 7 "clamp"  
+
+
+
+% \newcommand{\Hrule}[1][.]{%
+%   % \par\addvspace{#2}%
+%   \begingroup\color{#1}%
+%   \hrule height 12pt
+%   \endgroup
+%   \addvspace{3pt}%
+% }
+
+\newcommand{\Hrule}[1][.]{%
+\begingroup\color{#1}%
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+        \filldraw[draw=black]  (0,0) rectangle (10,0.2);
+    \end{tikzpicture}
+    }
+\endgroup
+\par\noindent%
+}
+
+\title{
+    \Huge{Die sieben Ringe der c-base}
+    }
+\author{
+    \resizebox{0.8\textwidth}{!}{
+        \input{tikz-c-base}
+    }
+    }
+\date{May 2024}
+
+\begin{document}
+
+\maketitle
+
+\setlength{\parindent}{0pt}
+ 
+\section{core}
+
+\Hrule[eins]
+
+core ist der innerste ring der c-base. er ist die commandoeinheit der raumstation: hier liegen die brücce, der centralcomputer exitc-beam und externe speichereinheiten, sowie der mino-reactor, der cybernetische antrieb der c-base auf quecksilberbasis.
+Die antenna ersteckt sich zur Zeit auf 368m über Normal Null sensor-array.
+
+
+
+\section{com}
+
+\Hrule[zwei]
+
+der raumhafen der c-base: hier laufen die communicationseinrichtungen zusammen und verteilen sich die zugänge zur station.
+    \begin{itemize}
+        \item shuttlebays und hangars
+        \item ancunftspromenade mit empfangsstation und wartehallen
+        \item lifeboats und worcpots
+        \item montagehallen, fracht- und laderäume 
+    \end{itemize}
+
+\section{culture}
+
+\Hrule[drei]
+
+der 3. ring von innen ist das cultumarium der c-base:
+hier kommt die crew zur entspannung und unterhaltung zusammen.
+    \begin{itemize}
+        \item großzügig angelegte freizeitpromenaden
+        \item paradisedeccs
+        \item culturedeccs mit c-no, triorama, performance \& events 
+    \end{itemize}
+
+\section{creativ}
+
+\Hrule[vier]
+
+der vierte ring von innen ist gleichzeitig auch der vierte ring von aussen. wahrscheinlich diente er der crew deswegen als inspirationsgenerator. in verschiedensten modulen sind creativ- und ideenfördernde einrichtungen untergebracht:
+    \begin{itemize}
+        \item die mobile creationbox, die an jede stelle des cience-rings fährt
+        \item das exitcosmolab, die terraforming-wercstatt
+        \item langschlafcabinen für die beliebten fivehoundred-year-projects (fyp)
+        \item brainlabs und aerosphären
+        \item gedächtniscammern, tancs, gedancengeneratoren
+        \item völlig leere räume 
+    \end{itemize}
+
+\section{cience}
+
+\Hrule[fuenf]
+
+cience ist der forschungsring der c-base: hier liegen alle wesentlichen forschungs- und entwicclungseinrichtungen der station in verschiedensten arbeitsbereichen focussiert beieinander. die ersten ideen und wahrheiten werden hier geschaffen.
+    \begin{itemize}
+        \item genlabs des evolutionsdesign
+        \item die biolabs mit arboretum
+        \item die soziochemie der socialartists
+        \item die medialabs
+    \end{itemize}
+
+
+\section{carbon}
+
+\Hrule[sechs]
+
+das wohnungsdeckmodul bietet familiengerechte lebensqualität für die crew:
+die c-base ist ein generationenschiff und hat platz für eine besatzungsstärke von bis zu 5000 carboneinheiten. In einem notfall kann jede der 144 habitate von der station gelöst werden und eigenständig manövrieren.
+    \begin{itemize}
+        \item 144 lifehabitatmodule mit je 12 habitateinheiten
+        \item ver- und entsorgungseinheiten
+        \item foodsupply mit medical support unit
+        \item cindergarten
+        \item schulen
+    \end{itemize}
+
+
+\section{clamp}
+
+\Hrule[sieben]
+
+der größte ring umschließt als stützconstruction alle anderen ringe der raumstation.
+    \begin{itemize}
+        \item antennen- und sensoreneinheiten
+        \item coursecorrectursupporter
+        \item siri-sonden-doccs
+        \item das ectonet
+    \end{itemize}
+
+\end{document}
