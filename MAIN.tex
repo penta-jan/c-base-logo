@@ -1,4 +1,4 @@
-\documentclass[14pt]{extarticle}  %% document requires XeLaTex.
+\documentclass[14pt,ngerman]{extarticle}  %% document requires XeLaTex.
 \usepackage[ngerman]{babel}
 \usepackage{geometry}
  \geometry{
@@ -7,25 +7,48 @@
  left=20mm,
  top=20mm,
  }
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{tabularx}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 
 \usepackage{standalone}
 \usepackage{tikz}
 
+\usepackage{pst-solides3d}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{cleveref}
+% \AddToHook{cmd/section/before}{\clearpage}
+
 \usepackage{fontspec}
 % % \setmainfont{ceva-c2.ttf}
 \setmainfont{Alegreya Sans}
+
+\usepackage{lettrine}
  
+\usepackage{biblatex}
+\addbibresource{literature.bib}
 
+\definecolor{eins}{HTML}{e7e7e8}   %% Ring 1 "core"     - weiß - Mittelpunkt, Ring um Mittelpunkt
+\definecolor{zwei}{HTML}{ed1c24}   %% Ring 2 "com"      - rot -  "Fenster" innen
+\definecolor{drei}{HTML}{fbad18}   %% Ring 3  "culture" - orange - fünf Module, quasi invertiert
+\definecolor{vier}{HTML}{74c043}   %% Ring 4  "creactive" - grün -  vier Module
+\definecolor{fuenf}{HTML}{0089d0}  %% Ring 5 "cience"  - cyan (blau) - drei Module mit "Strich"
+\definecolor{sechs}{HTML}{11357e}  %% Ring 6 "carbon" -  indigo - viele "Fenster" außen
+\definecolor{sieben}{HTML}{000000} %% Ring 7 "clamp" -  schwarz, c-förmig
+\definecolor{cbase}{HTML}{222222}  %% Körper der Raumstation
 
-\definecolor{eins}{HTML}{FFFFFF}   %% Ring 1 "core"     - weiß - Mittelpunkt 
-\definecolor{zwei}{HTML}{FF0000}   %% Ring 2 "com"      - rot
-\definecolor{drei}{HTML}{FF7F00}   %% Ring 3  "culture" - orange - "Fenster"
-\definecolor{vier}{HTML}{AAFF00}   %% Ring 4  "creativ" - grün -  fünf Module, quasi invertiert
-\definecolor{fuenf}{HTML}{00FFFF}  %% Ring 5 "cience"  - blau - vier Module
-\definecolor{sechs}{HTML}{800080}  %% Ring 6 "carbon" -  violett Ring um Mittelpunkt
-\definecolor{sieben}{HTML}{4B0082} %% Ring 7 "clamp" -  indigo - viele Fenster
-
-
+\newcommand{\noun}[1]{\textsc{#1}}
 
 \newcommand{\Hrule}[1][.]{%
 \begingroup\color{#1}%
@@ -33,112 +56,121 @@
     \begin{tikzpicture}
         \filldraw[draw=black]  (0,0) rectangle (10,0.2);
     \end{tikzpicture}
-    }
-\endgroup
-\par\noindent%
+    }%
+\endgroup%
 }
 
+\newcommand{\Hrulek}[1][.]{%
+\begingroup\color{#1}%
+    \resizebox{3ex}{!}{
+    \begin{tikzpicture}
+        \filldraw[draw=black]  (0,0) rectangle (2,1);
+    \end{tikzpicture}
+    }%
+\endgroup%
+}
+
+\newcommand{\ceva}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
+\newcommand{\cevain}[1]{~{\fontspec{[ceva-c2.ttf]}#1} / \emph{#1}}
+
+\newcommand{\twofonts}[1]{
+\begin{quote}\small
+    {\fontspec{[ceva-c2.ttf]}#1}
+    \par
+    {#1}
+\end{quote}
+}
+
+\newcommand{\csection}[1]{
+\section{#1 \hspace{2ex} \raisebox{1pt}{{\fontspec{[ceva-c2.ttf]}(#1)}}}
+\fancyhead[RO]{#1}
+\fancyhead[LO]{\thesection}
+}
+
+\newenvironment{newstuff}
+{}
+{\hfill{\footnotesize{[penta]}}}
+
+
 \title{
-    \Huge{Die sieben Ringe der c-base}
+    {\fontspec{[ceva-c2.ttf]}die 7 ringe der c-base} \\
+    Die 7 Ringe der c-base
     }
 \author{
-    \resizebox{0.8\textwidth}{!}{
-        \input{tikz-c-base}
-    }
-    }
-\date{May 2024}
+    \resizebox{4cm}{!}{\input{tikz-c-base}}\\
+    penta}
+% \date{May 2024}
 
 \begin{document}
 
+
 \maketitle
 
-\setlength{\parindent}{0pt}
+% \setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+% \setlength\itemsep{0em}
+
+\begin{quote}\small
+    \twofonts{es gibt drei möglichkeiten in der c-base, um an informationen zu gelangen: würfeln, bogglen, googlen.} \hfill Anonymous, nach \cite[S. 47]{cbasebook}
+\end{quote}
+
+\begin{abstract}
+    Dieses Papier dokumentiert die aktuell zuhandenen Informationen über die Rolle und Funktion der Ringe der Raumstation \cevain{c-base}  unter Berlin. Jeder Abschnitt beginnt mit einer Widergabe der Primärquellen  \cevain{c-tour}~\cite{ctour} und des \cevain{starbase-manual7}~\cite{cbasestarbasemanual}.     
+    Das offensichtlich später, aber gedruckt erschienene \cevain{c-book} \cite{cbasebook} benutzt diese Quellen und entspricht ihnen im Großen und Ganzen; wo es weitere Informationen bereit hält, sind diese ebenfalls wörtlich, aber in den Text eingebettet, angeführt. 
+    
+    Unser Haupttext ist ein Kommentar aus Sicht des aktuellen Wissenstands im Lichte neuer Ausgrabungen und der vorangegangenen Exegese. 
+    
+    Die Raumstation ist ein  "`autopoietisches"', also selbsterschaffendes, System; sie (re)kon\-stru\-iert sich selbst. Dieser Prozess ist unabgeschlossen \cite{cbasebook} und vermutlich sogar ergebnisoffen; alles, was wir bereits über die Raumstation wissen, ist temporal gebunden und kann durch neue Erkenntnisse und weitere Entwicklungen überholt werden. 
+    
+    Da folglich niemand die \ceva{c-base} vollständig kennt oder verstehen kann, ist jede Aussage nur ein Beitrag zum Erkenntnisfortschritt. 
+    Insofern bitten wir diesen Text nicht für apodiktisch zu halten. Insbesondere sind die hier abgedruckten Aussagen keine offizielle Mitteilung des c-base e.V. Berlin. 
+
+    Diese Arbeit hofft einen Beitrag zum besseren Verständnis von Funktion und Architektur der multidimensionalen Station zu leisten.
+    
+    Vielen Dank für die Beachtung aller Sicherheitshinweise.
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+\input{forschungsgeschichte}
+
+\input{befund}
+
+\clearpage
+
+
+\pagestyle{fancy}
  
-\section{core}
+\input{core}
 
-\Hrule[eins]
+\input{com}
 
-core ist der innerste ring der c-base. er ist die commandoeinheit der raumstation: hier liegen die brücce, der centralcomputer exitc-beam und externe speichereinheiten, sowie der mino-reactor, der cybernetische antrieb der c-base auf quecksilberbasis.
-Die antenna ersteckt sich zur Zeit auf 368m über Normal Null sensor-array.
+\input{culture}
 
+\input{creactive}
 
+\input{cience}
 
-\section{com}
+\input{carbon}
 
-\Hrule[zwei]
+\input{clamp}
 
-der raumhafen der c-base: hier laufen die communicationseinrichtungen zusammen und verteilen sich die zugänge zur station.
-    \begin{itemize}
-        \item shuttlebays und hangars
-        \item ancunftspromenade mit empfangsstation und wartehallen
-        \item lifeboats und worcpots
-        \item montagehallen, fracht- und laderäume 
-    \end{itemize}
+\input{ergebnis}
 
-\section{culture}
-
-\Hrule[drei]
-
-der 3. ring von innen ist das cultumarium der c-base:
-hier kommt die crew zur entspannung und unterhaltung zusammen.
-    \begin{itemize}
-        \item großzügig angelegte freizeitpromenaden
-        \item paradisedeccs
-        \item culturedeccs mit c-no, triorama, performance \& events 
-    \end{itemize}
-
-\section{creativ}
-
-\Hrule[vier]
-
-der vierte ring von innen ist gleichzeitig auch der vierte ring von aussen. wahrscheinlich diente er der crew deswegen als inspirationsgenerator. in verschiedensten modulen sind creativ- und ideenfördernde einrichtungen untergebracht:
-    \begin{itemize}
-        \item die mobile creationbox, die an jede stelle des cience-rings fährt
-        \item das exitcosmolab, die terraforming-wercstatt
-        \item langschlafcabinen für die beliebten fivehoundred-year-projects (fyp)
-        \item brainlabs und aerosphären
-        \item gedächtniscammern, tancs, gedancengeneratoren
-        \item völlig leere räume 
-    \end{itemize}
-
-\section{cience}
-
-\Hrule[fuenf]
-
-cience ist der forschungsring der c-base: hier liegen alle wesentlichen forschungs- und entwicclungseinrichtungen der station in verschiedensten arbeitsbereichen focussiert beieinander. die ersten ideen und wahrheiten werden hier geschaffen.
-    \begin{itemize}
-        \item genlabs des evolutionsdesign
-        \item die biolabs mit arboretum
-        \item die soziochemie der socialartists
-        \item die medialabs
-    \end{itemize}
+\clearpage
 
 
-\section{carbon}
 
-\Hrule[sechs]
+\fancyhead[RO]{Literatur}\addcontentsline{toc}{section}{Literatur}\label{sec:literatur}
 
-das wohnungsdeckmodul bietet familiengerechte lebensqualität für die crew:
-die c-base ist ein generationenschiff und hat platz für eine besatzungsstärke von bis zu 5000 carboneinheiten. In einem notfall kann jede der 144 habitate von der station gelöst werden und eigenständig manövrieren.
-    \begin{itemize}
-        \item 144 lifehabitatmodule mit je 12 habitateinheiten
-        \item ver- und entsorgungseinheiten
-        \item foodsupply mit medical support unit
-        \item cindergarten
-        \item schulen
-    \end{itemize}
+    \nocite{*}
+    \printbibliography
 
+\end{document}
 
-\section{clamp}
-
-\Hrule[sieben]
-
-der größte ring umschließt als stützconstruction alle anderen ringe der raumstation.
-    \begin{itemize}
-        \item antennen- und sensoreneinheiten
-        \item coursecorrectursupporter
-        \item siri-sonden-doccs
-        \item das ectonet
-    \end{itemize}
 
 \end{document}

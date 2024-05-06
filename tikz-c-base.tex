@@ -14,21 +14,26 @@
     }
   }
 }
-\definecolor{eins}{HTML}{FFFFFF}   %% Ring 1 "core"     - weiß - Mittelpunkt 
-\definecolor{zwei}{HTML}{FF0000}   %% Ring 2 "com"      - rot -  Ring um Mittelpunkt
-\definecolor{drei}{HTML}{FF7F00}   %% Ring 3  "culture" - orange - "Fenster" innen
-\definecolor{vier}{HTML}{AAFF00}   %% Ring 4  "creativ" - grün -  fünf Module, quasi invertiert
-\definecolor{fuenf}{HTML}{00FFFF}  %% Ring 5 "cience"  - blau - vier Module
-\definecolor{sechs}{HTML}{800080}  %% Ring 6 "carbon" -  violett - drei Module mit "Strich"
-\definecolor{sieben}{HTML}{4B0082} %% Ring 7 "clamp" -  indigo - viele "Fenster" außen
+\definecolor{eins}{HTML}{e7e7e8}   %% Ring 1 "core"     - weiß - Mittelpunkt, Ring um Mittelpunkt
+\definecolor{zwei}{HTML}{ed1c24}   %% Ring 2 "com"      - rot -  "Fenster" innen
+\definecolor{drei}{HTML}{fbad18}   %% Ring 3  "culture" - orange - fünf Module, quasi invertiert
+\definecolor{vier}{HTML}{74c043}   %% Ring 4  "creativ" - grün -  vier Module
+\definecolor{fuenf}{HTML}{0089d0}  %% Ring 5 "cience"  - cyan (blau) - drei Module mit "Strich"
+\definecolor{sechs}{HTML}{11357e}  %% Ring 6 "carbon" -  indigo - viele "Fenster" außen
+\definecolor{sieben}{HTML}{000000} %% Ring 7 "clamp" -  schwarz, c-förmig
+\definecolor{cbase}{HTML}{222222}  %% Körper der Raumstation
+
 
     \begin{tikzpicture}%
         \def\radi{10}%     
 
         %% äußerer Radius
-        \filldraw[black] (0:0) circle (\radi-0.3);
+        \filldraw[sieben] (0:0) circle (\radi-0.3);  %% CLAMP - schwarz
+
+        \filldraw[cbase] (0:0) circle (\radi-1.52);
+        
         % was wegnehmen / weiß übermalen
-        \draw[white, line width=1.6cm] (0:0) pic{carc=-55:90:\radi-0.72}; 
+        \draw[white, line width=1.36cm] (0:0) pic{carc=-55:90:\radi-0.9}; 
 
         %% clamp - viele kleine Fenster
         \foreach [count=\i] \ii in {%
@@ -37,40 +42,40 @@
         182,186,
         202,206,...,250,
         266,270,...,304}
-            \draw[sieben, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2}; 
+            \draw[sechs, line width=0.5cm] (0:0) pic{carc=\ii:\ii-2:\radi-2}; 
         
         \draw[white, line width=3.05cm] (0:0) pic{carc=50:-55:\radi-3};
         
         \draw[white, line width=2cm] (0:0) pic{carc=-90:0:\radi-3.5};
 
   
-        \draw[sechs, line width=1.8cm] (0:0) 
+        \draw[fuenf, line width=1.8cm] (0:0) 
             pic{carc=82:135:\radi-3.5};
-        \draw[sechs, line width=1.8cm] (0:0) 
+        \draw[fuenf, line width=1.8cm] (0:0) 
             pic{carc=65:74:\radi-3.5};
-        \draw[sechs, line width=1.8cm] (0:0) 
+        \draw[fuenf, line width=1.8cm] (0:0) 
             pic{carc=53:62:\radi-3.5};
             
-        \draw[black, line width=0.4cm] (0:0) 
+        \draw[cbase, line width=0.4cm] (0:0) 
             pic{carc=110:135:\radi-3.3};
 
         \foreach [count=\i] \ii in {1,2,3,4}
-            \draw[fuenf, line width=1.5cm] (0:0) 
+            \draw[vier, line width=1.5cm] (0:0) 
             pic{carc=90*\i:90*\i+45:\radi-5.5};
 
 
-        \filldraw[vier] (0:0) circle (\radi-6.5);
+        \filldraw[drei] (0:0) circle (\radi-6.5);
         
         \foreach [count=\i] \ii in {1,2,3,4,5}
-            \draw[black, line width=0.7cm] (0:0) 
+            \draw[cbase, line width=0.7cm] (0:0) 
             pic{carc=72*\i+27:72*\i+36+27:\radi-7};
 
-        \filldraw[black] (0:0) circle (\radi-7.5);
+        \filldraw[cbase] (0:0) circle (\radi-7.5);
 
         \foreach [count=\i] \ii in {160,172,...,490}
-            \draw[drei, line width=0.4cm] (0:0) pic{carc=\ii:\ii-8:\radi-8};   
+            \draw[zwei, line width=0.4cm] (0:0) pic{carc=\ii:\ii-8:\radi-8};   
         
-        \filldraw[zwei] (0:0) circle (\radi-8.5);
+        \filldraw[eins] (0:0) circle (\radi-8.5);
         \filldraw[black] (0:0) circle (\radi-8.8);
         \filldraw[eins] (0:0) circle (\radi-9.8);
      
