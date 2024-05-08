@@ -92,7 +92,7 @@
 \newcommand{\csection}[1]{
 \section{#1 \hspace{2ex} \raisebox{1pt}{{\fontspec{[ceva-c2.ttf]}(#1)}}}
 \fancyhead[RO]{\ring{Ring}~\thesection~-~#1}
-\fancyhead[LO]{\thesection}
+\fancyhead[LO]{\thesection}\label{sec:#1}
 }
 
 \newenvironment{newstuff}
@@ -173,7 +173,7 @@
 
 \input{clamp}
 
-\input{fazit}
+\input{geometrie}
 
 \clearpage
 
