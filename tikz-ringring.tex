@@ -1,0 +1,36 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations, decorations.text}
+\usepackage{calc}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\newcommand{\ceva}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
+\definecolor{eins}{HTML}{e7e7e8}   %% Ring 1 "core"     - weiß - Mittelpunkt, Ring um Mittelpunkt
+\definecolor{zwei}{HTML}{ed1c24}   %% Ring 2 "com"      - rot -  "Fenster" innen
+\definecolor{drei}{HTML}{fbad18}   %% Ring 3  "culture" - orange - fünf Module, quasi invertiert
+\definecolor{vier}{HTML}{74c043}   %% Ring 4  "creactiv" - grün -  vier Module
+\definecolor{fuenf}{HTML}{0089d0}  %% Ring 5 "cience"  - cyan (blau) - drei Module mit "Strich"
+\definecolor{sechs}{HTML}{11357e}  %% Ring 6 "carbon" -  indigo - viele "Fenster" außen
+\definecolor{sieben}{HTML}{000000} %% Ring 7 "clamp" -  schwarz, c-förmig
+\definecolor{cbase}{HTML}{222222}  %% Körper der Raumstation    
+\begin{document}
+%% c-base logo nachgebaut von penta.
+%% alles nur geschätze Winkel und Abstände :/
+%% um den code zu verstehen, einfach mal einzelne Teile auskommentieren und wieder einkommentieren (ctrl-#) und dann mal \draw[white] durch \draw[red] ersetzen, dann sieht man, was was ist.
+%% viel Spaß damit.
+\tikzset{
+  pics/carc/.style args={#1:#2:#3:#4}{
+    code={
+      \draw[postaction={decorate, decoration={text along path, raise=-2pt, text align={align=center}, text={\ceva{#4}}, reverse path}}] (#1:#3) arc(#1:#2:#3);
+    }
+  }
+}%
+    \begin{tikzpicture}
+        \draw[gray, line width=50pt] (0:0) circle (3);
+        \foreach [count=\i] \ring/\color in
+            {core/eins,com/zwei,culture/drei,creactiv/vier,cience/fuenf,carbon/sechs,clamp/sieben}
+            {%
+                \draw[color=\color!50,line width=45pt] (0:0) pic{carc=\i*51.418-25:\i*51.418+25:3:\ring};
+            }%
+    \end{tikzpicture}
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage[svgnames]{pstricks}
+\usepackage{pst-solides3d}
+\definecolor{eins}{HTML}{e7e7e8}   %% Ring 1 "core"     - weiß - Mittelpunkt, Ring um Mittelpunkt
+\definecolor{zwei}{HTML}{ed1c24}   %% Ring 2 "com"      - rot -  "Fenster" innen
+\definecolor{drei}{HTML}{fbad18}   %% Ring 3  "culture" - orange - fünf Module, quasi invertiert
+\definecolor{vier}{HTML}{74c043}   %% Ring 4  "creactiv" - grün -  vier Module
+\definecolor{fuenf}{HTML}{0089d0}  %% Ring 5 "cience"  - cyan (blau) - drei Module mit "Strich"
+\definecolor{sechs}{HTML}{11357e}  %% Ring 6 "carbon" -  indigo - viele "Fenster" außen
+\definecolor{sieben}{HTML}{000000} %% Ring 7 "clamp" -  schwarz, c-förmig
+\definecolor{cbase}{HTML}{222222}  %% Körper der Raumstation    
+\begin{document}
+
+%% https://ftp.tu-chemnitz.de/pub/tex/graphics/pstricks/contrib/pst-solides3d/doc/pst-solides3d-doc.pdf
+
+\begin{pspicture}(-4,-4)(4,4)
+    \psset{Decran=20,viewpoint=5 11 25}
+    \pstVerb{/iface 0 store}%
+    \psSolid[
+        fcol=48 {iface (green)
+        iface 1 add (orange)
+        iface 2 add (orange)
+        iface 3 add (red) 
+        iface 4 add (red) 
+        iface 5 add (white) 
+        iface 6 add (white) 
+        iface 7 add (black) 
+        iface 8 add (black) 
+        iface 9 add (blue) 
+        iface 10 add (blue) 
+        iface 11 add (SkyBlue) 
+        iface 12 add (SkyBlue) 
+        iface 13 add (green) /iface
+        iface 14 add store} repeat,
+        r1=3,r0=2,
+        object=tore,
+        ngrid=27 14,
+        RotY=30]
+\end{pspicture}
+
+\end{document}

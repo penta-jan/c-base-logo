@@ -15,6 +15,8 @@
 \usepackage{mathtools}
 \usepackage{nicefrac}
 \usepackage{tabularx}
+\usepackage{svg}
+\usepackage{subcaption}
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -22,6 +24,7 @@
 
 \usepackage{standalone}
 \usepackage{tikz}
+\usetikzlibrary{decorations, decorations.text,}
 
 \usepackage{pst-solides3d}
 
@@ -29,6 +32,7 @@
 
 \usepackage{cleveref}
 % \AddToHook{cmd/section/before}{\clearpage}
+
 
 \usepackage{fontspec}
 % % \setmainfont{ceva-c2.ttf}
@@ -71,25 +75,31 @@
 }
 
 \newcommand{\ceva}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
+\newcommand{\cevanb}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
 \newcommand{\cevain}[1]{~{\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
+\newcommand{\cevalong}[1]{~{\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
 
-\newcommand{\twofonts}[1]{
+\newcommand{\ring}[1]{\ceva{#1}}
+
+\newcommand{\twofonts}[2][]{
 \begin{quote}%\small
-    {\fontspec{[ceva-c2.ttf]}#1}
+    {\fontspec{[ceva-c2.ttf]}#2}
     \par
-    {#1}
+    #2\hfill#1
 \end{quote}
 }
 
 \newcommand{\csection}[1]{
 \section{#1 \hspace{2ex} \raisebox{1pt}{{\fontspec{[ceva-c2.ttf]}(#1)}}}
-\fancyhead[RO]{#1}
+\fancyhead[RO]{\ring{Ring}~\thesection~-~#1}
 \fancyhead[LO]{\thesection}
 }
 
 \newenvironment{newstuff}
 {}
-{\hfill{\footnotesize{[penta]}}}
+{\hfill{\footnotesize{[penta]}}
+\clearpage
+}
 
 
 \title{
@@ -111,41 +121,43 @@
 % \setlength\itemsep{0em}
 
 % \begin{quote}\small
-%     \twofonts{es gibt drei möglichkeiten in der c-base, um an informationen zu gelangen: würfeln, bogglen, googlen.} \hfill Anonymous, nach \cite[S. 47]{cbasebook}
+%     \twofonts{es gibt drei möglichkeiten in der c-base, um an informationen zu gelangen: würfeln, bogglen, googlen.} \hfill Anonymous, nach~\cite[S. 47]{cbasebook}
 % \end{quote}
 
 \begin{abstract}
-    Dieses Papier dokumentiert die aktuell zuhandenen Informationen über die Rolle und Funktion der Ringe der Raumstation unter Berlin \cevain{c-base}. Jeder Abschnitt beginnt mit einer Wiedergabe der Primärquellen  \cevain{c-tour}~\cite{ctour} und des \cevain{starbase-manual7}~\cite{cbasestarbasemanual}.
-    Das offensichtlich später, aber gedruckt erschienene \cevain{c-book}~\cite{cbasebook} benutzt diese Quellen und entspricht ihnen im Großen und Ganzen; wo es weitere Informationen bereit hält, sind diese ebenfalls wörtlich, aber in den Text eingebettet, angeführt. 
-    
-    Unser Haupttext ist ein Kommentar aus Sicht des aktuellen Wissenstands im Lichte neuer Ausgrabungen und der vorangegangenen Exegese. 
+    Dieses Papier versammelt die wesentlichen, aktuell zuhandenen diachronen Informationen über die Rolle und Funktion der \cevain{Ringe} der Raumstation unter Berlin \cevain{\mbox{c-base}} und interpretiert die Quellen- und Sachlage.    
+    Unser Haupttext ist ein exegetischer Kommentar aus Sicht des aktuellen Wissenstands im Lichte neuer Ausgrabungen.
     
     Die Raumstation ist ein  "`autopoietisches"', also selbsterschaffendes, System; sie (re)kon\-stru\-iert sich selbst. Dieser Prozess ist unabgeschlossen~\cite{cbasebook} und vermutlich sogar ergebnisoffen; alles, was wir bereits über die Raumstation wissen, ist temporal gebunden und kann durch neue Erkenntnisse und weitere Entwicklungen überholt werden. 
     
     Da folglich niemand die \ceva{c-base} vollständig kennt oder verstehen kann, ist jede Aussage nur ein Beitrag zum Erkenntnisfortschritt. 
     Insofern bitten wir diesen Text nicht für apodiktisch zu halten. Insbesondere sind die hier abgedruckten Aussagen keine offizielle Mitteilung des c-base e.V. Berlin. 
 
-    Diese Arbeit hofft einen Beitrag zum besseren Verständnis von Funktion und Architektur der multidimensionalen Station zu leisten.
+    Diese Arbeit leistet einen Beitrag zum besseren Verständnis von Funktion und Architektur der multidimensionalen Station, indem wir zum Schluss   eine Idee zur Anordnung der Ringe im Raum vorstellen.
     
     Vielen Dank für die Beachtung aller Sicherheitshinweise.
 \end{abstract}
 
 \clearpage
 
+
+
 \tableofcontents
+
+\pagestyle{fancy}
 
 \clearpage
 
-\input{sprache}
+\input{quellen}
 
 \input{forschungsgeschichte}
 
-\input{befund}
+\input{sachlage}
 
 \clearpage
 
 
-\pagestyle{fancy}
+
  
 \input{core}
 
@@ -161,7 +173,7 @@
 
 \input{clamp}
 
-\input{ergebnis}
+\input{fazit}
 
 \clearpage
 
@@ -169,7 +181,7 @@
 
 \fancyhead[RO]{Literatur}\addcontentsline{toc}{section}{Literatur}\label{sec:literatur}
 
-    \nocite{*}
+    % \nocite{*}
     \printbibliography
 
 \end{document}
