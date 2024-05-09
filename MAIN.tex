@@ -18,6 +18,8 @@
 \usepackage{svg}
 \usepackage{subcaption}
 
+\usepackage[firstpageonly=true]{draftwatermark}
+
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
@@ -74,10 +76,9 @@
 \endgroup%
 }
 
-\newcommand{\ceva}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
-\newcommand{\cevanb}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
-\newcommand{\cevain}[1]{~{\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
-\newcommand{\cevalong}[1]{~{\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
+\newcommand{\ceva}[1]{ {\fontspec{[ceva-c2.ttf]}#1}}
+\newcommand{\cevain}[1]{ {\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
+% \newcommand{\cevalong}[1]{ {\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
 
 \newcommand{\ring}[1]{\ceva{#1}}
 
@@ -89,10 +90,12 @@
 \end{quote}
 }
 
+
+
 \newcommand{\csection}[1]{
 \section{#1 \hspace{2ex} \raisebox{1pt}{{\fontspec{[ceva-c2.ttf]}(#1)}}}
 \fancyhead[RO]{\ring{Ring}~\thesection~-~#1}
-\fancyhead[LO]{\thesection}\label{sec:#1}
+\label{sec:#1}
 }
 
 \newenvironment{newstuff}
@@ -104,11 +107,13 @@
 
 \title{
     {\fontspec{[ceva-c2.ttf]}die 7 ringe der c-base} \\
-    Die 7 Ringe der c-base
+    Die 7 Ringe der c-base%\\\vspace{2ex}\\ Eine Untersuchung der Primärquellen
     }
+
 \author{
     \resizebox{4cm}{!}{\input{tikz-c-base}}\\
-    penta}
+    penta\\ \makeatletter penta@c-base.org\makeatother
+    }
 % \date{May 2024}
 
 \begin{document}
@@ -116,48 +121,44 @@
 
 \maketitle
 
-% \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex}
-% \setlength\itemsep{0em}
-
-% \begin{quote}\small
-%     \twofonts{es gibt drei möglichkeiten in der c-base, um an informationen zu gelangen: würfeln, bogglen, googlen.} \hfill Anonymous, nach~\cite[S. 47]{cbasebook}
-% \end{quote}
+ 
+    
 
 \begin{abstract}
-    Dieses Dokument versammelt die wesentlichen, aktuell zuhandenen diachronen Informationen über die Rolle und Funktion der \cevain{Ringe} der Raumstation unter Berlin \cevain{\mbox{c-base}} und interpretiert die Quellen- und Sachlage.    
-    Unser Haupttext ist ein exegetischer Kommentar aus Sicht des aktuellen Wissenstands im Lichte neuer Ausgrabungen.
+    Dieses Dokument versammelt die wichtigsten, aktuell vorhandenen Texte über die Rolle und Funktion der \cevain{Ringe} der Raumstation unter Berlin \cevain{\mbox{c-base}} und interpretiert die Quellen- und Sachlage.    
+    Unser Haupttext ist ein exegetischer Kommentar aus Sicht des aktuellen Wissenstands im Lichte neuer Ausgrabungen.   
+    
+    Diese Arbeit leistet einen wissenschaftlichen Beitrag zum besseren Verständnis von Funktion und Topologie der multidimensionalen Station, indem wir zum Schluss eine neue Idee zur Anordnung der Ringe im Raum vorstellen.
     
     Die Raumstation ist ein  "`autopoietisches"', also selbsterschaffendes, System; sie (re)kon\-stru\-iert sich selbst. Dieser Prozess ist unabgeschlossen~\cite{cbasebook} und vermutlich sogar ergebnisoffen; alles, was wir bereits über die Raumstation wissen, ist temporal gebunden und kann durch neue Erkenntnisse und weitere Entwicklungen überholt werden. 
     
     Da folglich niemand die \ceva{c-base} vollständig kennt oder verstehen kann, ist jede Aussage nur ein Beitrag zum Erkenntnisfortschritt. 
-    Insofern bitten wir diesen Text nicht für apodiktisch zu halten. Insbesondere sind die hier abgedruckten Aussagen keine offizielle Mitteilung des c-base e.V. Berlin. 
+    Insofern bitten wir diesen Text nicht für apodiktisch zu halten. 
+    % Insbesondere sind die hier abgedruckten Aussagen keine offizielle Mitteilung des c-base e.V. Berlin.% \hfill\emph{VDfdBaS}~\footnotesize{[penta]}
 
-    Diese Arbeit leistet einen Beitrag zum besseren Verständnis von Funktion und Architektur der multidimensionalen Station, indem wir zum Schluss   eine Idee zur Anordnung der Ringe im Raum vorstellen.
-    
-    Vielen Dank für die Beachtung aller Sicherheitshinweise.
 \end{abstract}
+
+\twofonts[\cite{cbasebook}~S.~47]{\small Vielen Dank für die Beachtung aller Sicherheitshinweise}
 
 \clearpage
 
-
-
 \tableofcontents
 
-\pagestyle{fancy}
+\pagestyle{fancy}\fancyhead[LO]{Die 7 \ring{Ringe} der \ceva{c-base}}%\label{sec:#1}
 
 \clearpage
 
 \input{quellen}
 
-\input{forschungsgeschichte}
+\input{archaeologie}
 
 \input{sachlage}
 
 \clearpage
 
 
-
+%%% Ringe
  
 \input{core}
 
@@ -173,7 +174,9 @@
 
 \input{clamp}
 
-\input{geometrie}
+\input{fazit}
+
+\input{topologie}
 
 \clearpage
 
