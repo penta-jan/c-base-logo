@@ -1,4 +1,4 @@
-\documentclass[14pt,ngerman]{extarticle}  %% document requires XeLaTex.
+\documentclass[14pt,ngerman]{extreport}  %% document requires XeLaTex.
 \usepackage[ngerman]{babel}
 \usepackage{geometry}
  \geometry{
@@ -6,7 +6,8 @@
  total={170mm,257mm},
  left=20mm,
  top=20mm,
- }
+}
+
 \usepackage{fancyhdr}
 \usepackage{booktabs}
 \usepackage{microtype}
@@ -14,9 +15,13 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{nicefrac}
+\usepackage{icomma}
 \usepackage{tabularx}
 \usepackage{svg}
 \usepackage{subcaption}
+\usepackage{mdframed}
+\usepackage{imakeidx}
+\makeindex
 
 \usepackage[firstpageonly=true]{draftwatermark}
 
@@ -33,7 +38,6 @@
 \usepackage[hidelinks]{hyperref}
 
 \usepackage{cleveref}
-% \AddToHook{cmd/section/before}{\clearpage}
 
 
 \usepackage{fontspec}
@@ -66,7 +70,7 @@
 \endgroup%
 }
 
-\newcommand{\Hrulek}[1][.]{%
+\newcommand{\Hrulek}[1][.]{%  used in table
 \begingroup\color{#1}%
     \resizebox{3ex}{!}{
     \begin{tikzpicture}
@@ -76,48 +80,77 @@
 \endgroup%
 }
 
-\newcommand{\ceva}[1]{ {\fontspec{[ceva-c2.ttf]}#1}}
-\newcommand{\cevain}[1]{ {\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
+\newcommand{\ceva}[1]{ % Leerzeichen notwendig
+    {\fontspec{[ceva-c2.ttf]}#1}%
+}
+\newcommand{\cevain}[1]{ % Leerzeichen notwendig!
+    {\fontspec{[ceva-c2.ttf]}#1} $\mid$ \emph{#1}%
+    \index{{\fontspec{[ceva-c2.ttf]}#1} $\mid$ #1}%
+}
 % \newcommand{\cevalong}[1]{ {\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
 
-\newcommand{\ring}[1]{\ceva{#1}}
+\newcommand{\ring}[1]{ % Leerzeichen notwendig
+    {\fontspec{[ceva-c2.ttf]}#1}%
+    % \index{{\fontspec{[ceva-c2.ttf]}#1} $\mid$ #1}
+}
 
 \newcommand{\twofonts}[2][]{
-\begin{quote}%\small
+\begin{quote} 
     {\fontspec{[ceva-c2.ttf]}#2}
     \par
     #2\hfill#1
 \end{quote}
 }
 
-
-
-\newcommand{\csection}[1]{
-\section{#1 \hspace{2ex} \raisebox{1pt}{{\fontspec{[ceva-c2.ttf]}(#1)}}}
-\fancyhead[RO]{\ring{Ring}~\thesection~-~#1}
-\label{sec:#1}
+\newcommand{\linek}[2][]{
+\begin{quote} 
+    {\fontspec{[linek.ttf]}#2}
+    \par
+    {\fontspec{[ceva-c2.ttf]}#2}
+    \par
+    #2\hfill#1
+\end{quote}
 }
+
+\newcommand{\linekin}[1]{ % Leerzeichen notwendig!
+    {\fontspec{[linek.ttf]}#1} $\cdot$ %
+    % {\fontspec{[ceva-c2.ttf]}#1} $\mid$
+    \emph{#1}%
+    \index{{\fontspec{[linek.ttf]}#1} 
+    % $\cdot$ {\fontspec{[ceva-c2.ttf]}#1} 
+    $\mid$ #1}%
+}
+\newcommand{\linekonly}[1]{ % Leerzeichen notwendig!
+    {\fontspec{[linek.ttf]}#1}%
+}
+
 
 \newenvironment{newstuff}
-{}
-{\hfill{\footnotesize{[penta]}}
-\clearpage
-}
+    {\par\bigskip\hrule}
+    {\hfill{\footnotesize{[penta]}}
+    \par
+    \medskip    
+    \hrule
+    \clearpage
+    }
 
 
 \title{
-    {\fontspec{[ceva-c2.ttf]}die 7 ringe der c-base} \\
-    Die 7 Ringe der c-base%\\\vspace{2ex}\\ Eine Untersuchung der Primärquellen
+    \ceva{die 7 ringe der c-base} \\
+    Die 7 Ringe der c-base%\\ Eine Exegese%\\\vspace{2ex}\\ Eine Untersuchung der Primärquellen
     }
 
 \author{
-    \resizebox{4cm}{!}{\input{tikz-c-base}}\\
-    penta\\ \makeatletter penta@c-base.org\makeatother
+    \resizebox{8cm}{!}{\input{tikz-c-base}}\\\smallskip\\\cevain{ccr}\\
+    % \ceva{c-base cience ring}\\ 
+    c-base cience ring\\\smallskip\\
+    \cevain{penta}\\ \makeatletter {\texttt{penta@c-base.org}}\makeatother
     }
+
+
 % \date{May 2024}
 
 \begin{document}
-
 
 \maketitle
 
@@ -125,67 +158,148 @@
  
     
 
-\begin{abstract}
-    Dieses Dokument versammelt die wichtigsten, aktuell vorhandenen Texte über die Rolle und Funktion der \cevain{Ringe} der Raumstation unter Berlin \cevain{\mbox{c-base}} und interpretiert die Quellen- und Sachlage.    
-    Unser Haupttext ist ein exegetischer Kommentar aus Sicht des aktuellen Wissenstands im Lichte neuer Ausgrabungen.   
+\begingroup
+    \small
+    \flushright gigantum umeris insidentes\\ auf den Schultern von Riesen
     
-    Diese Arbeit leistet einen wissenschaftlichen Beitrag zum besseren Verständnis von Funktion und Topologie der multidimensionalen Station, indem wir zum Schluss eine neue Idee zur Anordnung der Ringe im Raum vorstellen.
-    
-    Die Raumstation ist ein  "`autopoietisches"', also selbsterschaffendes, System; sie (re)kon\-stru\-iert sich selbst. Dieser Prozess ist unabgeschlossen~\cite{cbasebook} und vermutlich sogar ergebnisoffen; alles, was wir bereits über die Raumstation wissen, ist temporal gebunden und kann durch neue Erkenntnisse und weitere Entwicklungen überholt werden. 
-    
-    Da folglich niemand die \ceva{c-base} vollständig kennt oder verstehen kann, ist jede Aussage nur ein Beitrag zum Erkenntnisfortschritt. 
-    Insofern bitten wir diesen Text nicht für apodiktisch zu halten. 
-    % Insbesondere sind die hier abgedruckten Aussagen keine offizielle Mitteilung des c-base e.V. Berlin.% \hfill\emph{VDfdBaS}~\footnotesize{[penta]}
+\endgroup
 
-\end{abstract}
 
-\twofonts[\cite{cbasebook}~S.~47]{\small Vielen Dank für die Beachtung aller Sicherheitshinweise}
+\section*{Vorwort}
+
+
+    \lettrine{Ü}{ber} vier Milliarden Jahre sind seid der Erstkonstrukution der \ceva{c-base} bereits vergangen; und viele Generationen von \cevain{crew}-Mitgliedern sind seit der Auffindung des \cevain{urartefact} aufeinander gefolgt. 
+
+    Ursprungsmythen müssen immer wieder neu erzählt werden, um ihre integrative, Gemeinschaft inspirierende Kraft zu behalten \cite{levistrauss1985}. Dabei kommt es immer auch zu einer Rückbesinnung, wobei zugleich die Gefahr besteht, dass die Neuerzählung von der alten Wahrheit abirrt. 
+    
+    Es geht uns hier insofern um die Wiederherstellung reiner Lehre: wir gehen direkt zurück zu den ältesten Texten über die Rolle und Funktion der Raumstation unter Berlin und ihrer \cevain{ringe} durch Interpretation der Quellen- und Sachlage.   
+    
+    Unser eigener Text bzw. \cevain{blurb} ist ein akribischer exegetischer Kommentar aus Sicht des aktuellen Wissensstandes im Lichte neuer Ausgrabungen.   
+    
+    Diese Arbeit bzw. \cevain{arbyte} leistet einen wissenschaftlichen Beitrag \mbox{(\ceva{cience})} zum besseren Verständnis von Funktion und Topologie der multidimensionalen Station \emph{from first principles}. Zum Schluss präsentieren wir eine neue Idee zur Topologie der Ringe und damit der Station.
+    
+    Die Raumstation ist ein  "`autopoietisches"', also selbsterschaffendes, System; sie (re)kon\-stru\-iert sich selbst. Dieser Prozess ist unabgeschlossen~\cite{cbasebook} und vermutlich sogar ergebnisoffen. Alles, was wir bereits über die Raumstation wissen, ist temporal gebunden und kann durch neue Erkenntnisse und weitere Entwicklungen überholt werden. 
+    
+    Da folglich niemand die \ceva{c-base} vollständig kennt oder verstehen kann, ist jede Aussage nur ein Beitrag zum Erkenntnisfortschritt. Bestes Wissen schützt vor Irrtum nicht. 
+    Daher bitten wir diesen Text nicht für apodiktisch zu halten. 
+    Insbesondere sind die hier abgedruckten Aussagen keine offizielle Mitteilung des c-base e.V. Berlin.% \hfill\emph{VDfdBaS}~\footnotesize{[penta]}
+
+
+\twofonts[\cite{cbasebook}~S.~47]{Vielen Dank für die Beachtung\\ aller Sicherheitshinweise}
+
+\hfill Berlin, 2024\par\hfill \cevain{penta}
 
 \clearpage
 
 \tableofcontents
 
-\pagestyle{fancy}\fancyhead[LO]{Die 7 \ring{Ringe} der \ceva{c-base}}%\label{sec:#1}
+% \listoffigures
+% \listoftables
+
+\include{zitierweise}
+
+\pagestyle{fancy}\fancyhead[LO]{\leftmark}% Die 7 \ring{Ringe} der \ceva{c-base}}
 
 \clearpage
+
+\chapter{Die Station und ihre Geschichte}
+
+\input{chronologie}
 
 \input{quellen}
 
-\input{archaeologie}
+\input{ueberlieferung}
 
-\input{sachlage}
+\input{materiellerbefund}
+
+\input{zwischenergebnis-eins}
 
 \clearpage
 
+\chapter{Die 7 Ringe}
 
-%%% Ringe
- 
-\input{core}
+Die kanonische Literatur über diese \ring{ringe} wird im Folgenden wiedergegeben und die Funktion der \ring{ringe} anschließend beschrieben. 
 
-\input{com}
+Da unser Fokus auf der Funktion innerhalb des autopoietischen Systems \ceva{c-base} liegt, wird auf eine detaillierte Beschreibung einzelner Projekte, Module, Artefakte, Module und Bewohner wird verzichtet. 
+    
+Eine sehr gute Übersicht über ausgewählte einzelne Projekte, Aggregate, Artefakte und Module bietet das kanonische \ceva{c-booc}~\cite{cbasebook}. Zur Funktion, Geschichte und Ausgrabungsgeschichte der Station und des Rolle des Vereins c-base e.V. sei  \ceva{Pressemappe}~\cite{cbasepressemap} empfohlen.
 
-\input{culture}
+\clearpage
 
-\input{creactive}
+\begingroup %% Ringe
+    
+    \renewcommand{\thesection}{\arabic{section}.~Ring}
 
-\input{cience}
+    \newcommand{\ringcolor}[1]{
+        \begin{tikzpicture}
+        \filldraw[fill=#1]  (0,0) rectangle (5ex,1ex);
+        \end{tikzpicture}
+    }
+    
+    \newcommand{\csection}[2][.]{
+        \section{\hspace{2ex}#2\hspace{2ex} 
+            {\ceva{(#2)}}
+        }
+       \index{{\fontspec{[ceva-c2.ttf]}#2}$\mid$ #2}
+        \Hrule[#1]
+        \fancyhead[RO]{\thesection~
+            \ringcolor{#1}~#2~\ceva{#2}
+        }
+    }
+    
+    % \let\rinsection\section
+     
+    
+    %%% Ringe
+     
+    \input{core}
+    
+    \input{com}
+    
+    \input{culture}
+    
+    \input{creactive}
+    
+    \input{cience}
+    
+    \input{carbon}
+    
+    \input{clamp}
+    
+\endgroup
 
-\input{carbon}
-
-\input{clamp}
+\chapter{Weiterführende Überlegungen}
 
 \input{fazit}
+
+\input{stationsmathematik}
 
 \input{topologie}
 
 \clearpage
 
+\renewcommand\indexname{Fachindex}
+\indexprologue{\noindent Aufgeführt sind die Stellen, an welchen Begriffe erstmalig auftauchen, sowie alle weiteren Stellen, an denen eine lateinische Umschrift mit ausgegeben wird.}
+\fancyhead[RO]{Fachindex}\addcontentsline{toc}{chapter}{Fachindex}\label{sec:index}
+\printindex
 
+\clearpage
 
-\fancyhead[RO]{Literatur}\addcontentsline{toc}{section}{Literatur}\label{sec:literatur}
+%% separate primary and secondary literature
+% \chapter*{Literatur}
+% \fancyhead[LO]{Literatur}\label{sec:literatur}
+% \fancyhead[RO]{Primärquellen}\addcontentsline{toc}{chapter}{Literatur}
+% \printbibliography[title=Primärquellen, keyword=pri,heading=subbibliography]
 
-    % \nocite{*}
-    \printbibliography
+% \fancyhead[RO]{Weitere Quellen}\addcontentsline{toc}{chapter}{Weitere Quellen}
+% \printbibliography[title=Weitere Quellen, keyword=sec,heading=subbibliography]
+
+ 
+\fancyhead[LO]{Literatur}\label{sec:literatur}
+\fancyhead[RO]{Literatur}\addcontentsline{toc}{chapter}{Literatur}
+\printbibliography
+ 
+
 
 \end{document}
 
