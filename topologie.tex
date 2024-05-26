@@ -3,43 +3,75 @@
 \fancyhead[RO]{Stations-Topologie}
 % \fancyhead[LO]{}
 
+\paragraph{Notwendigkeit}
+
+Nicht alle kanonischen Aussagen über die \ceva{ringe} lassen sich befriedigend anhand der konventionellen Darstellungsweise der \ring{ringe} als konzentrische Kreise (\cref{fig:ringconvention}) demonstrieren. 
+
+So stellt sich die Frage: welche nicht-euklidische Topologie
+\begin{enumerate}
+    \item erklärt die Berührung von Innen (\ceva{core}) und Außen (\ceva{clamp})
+    \item erklärt die Sonderstellung des mittleren Rings \ceva{creactive}
+    \item kann durch Abbildung in die konventionelle Ansicht überführt werden?
+\end{enumerate}
+Dieser Frage gehen wir im Folgenden nach. 
+
 \paragraph{Verflachung}
-Die aktuelle Form ist Folge des den Absturzes der Raumstation, und vermutlich ist die gewissermaßen "`flache"' Struktur, die wir bei den bisherigen Rekonstruktionsphasen ausgemacht haben, eine zweidimensionale Projektion der eigentlich mehrdimensionalen Raumstation. 
+Die aktuelle Form ist Folge des den Absturzes der Raumstation, und vermutlich ist die gewissermaßen "`flache"' Struktur, die wir bei den bisherigen Rekonstruktionsphasen ausgemacht haben, eine zweidimensionale Projektion der eigentlich mehrdimensionalen Raumstation (\cref{eq:grundgleichung}). 
 
-Diese Frage stellt sich: welche Topologie hatten die \ring{ringe}, welche Topologie hatte die Station vor dem Absturz, und welche strebt sie damit an??
-
-\paragraph{Ringförmige Anordnung der Ringe}
-Wir haben gesehen, dass sich \ceva{clamp} und \ceva{core} berühren bzw. über eine Einstein-Rosen-Brücke verbunden sind. Daraus folgern wir eine (ursprünglich, zukünftig) \emph{ringförmige Anordnung der Ringe;} vgl  \cref{fig:ringring}.
+Diese Frage stellt sich: welche Topologie hatten die \ring{ringe}, welche Topologie hatte die Station vor dem Absturz, und welche strebt sie damit an? Wir gehen im Folgenden nicht auf die Möglichen $m$- oder $n$-dimensionalen Räume ein, sondern beschränken uns der Einfachheit halber auf zweidimensionale Mannigfaltigkeiten.
 
 \begin{figure}[ht!]
     \centering
-    \input{tikz-ringring}
-    \caption{Ringförmige Anordnung der \ring{ringe}}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{
+        \input{tikz-ringring}    
+        }
+    \end{subfigure}
+    \hspace{2ex}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+       \resizebox{\textwidth}{!}{
+        \input{tikz-ringe-olympisch}
+        }
+    \end{subfigure}
+    
+    \caption{Ringförmige Anordnungen der \ring{ringe}}
     \label{fig:ringring}
 \end{figure}
+
+\paragraph{Ringförmige Anordnung der Ringe}
+Wir haben gesehen, dass sich \ceva{clamp} und \ceva{core} berühren bzw. über eine Einstein-Rosen-Brücke verbunden sind. Daraus folgern wir eine (ursprünglich, zukünftig) \emph{ringförmige Anordnung der Ringe;} solche Ordnungen sind beispielhaft abgebildet in \cref{fig:ringring}. Jeder Ring tangiert unmittelbar jeden benachbarten Ring.
+
+
 
 \paragraph{Rotationstorus}
 Eine \emph{ringförmige Anordnung von Ringen }ist topologisch darstellbar als Fläche, die entsteht, wenn ein Kreis um einen Kreis (also quasi ein \ring{ring} um einen \ring{ring}) rotiert. Diese Figur ist der \emph{Rotationstorus}.
 
-\cref{fig:torusweiss}  zeigt ein toroidales Polyeder mit $14\times 14$ Flächen als Annäherung an den Rotationstorus.  
+\cref{fig:torusweiss}  zeigt ein toroidales Polyeder mit $14\times 14$ Flächen als Annäherung an den Rotationstorus. Eine solche Geometrie ist unter anderem für den \cevain{coremechanism} belegt (\cite[S.32f.]{cbasebook}).
 
 \begin{figure}[ht!]
     \centering
     \input{tikz-torus-white}
-    \caption{Toroidales Polyeder imt $14\times 14$T Flächen} Es hat 14  Meridiane und 14 Parallelkreise (angenähert)
+    \caption{Toroidales Polyeder imt $14\times 14$ Flächen} 
+    % Es hat 14  Meridiane und 14 Parallelkreise (angenähert)
     \label{fig:torusweiss}
 \end{figure}
 
 Nun stellt sich die Frage, wie die \ring{ringe} auf so einem Torus angeordnet waren bzw. sein werden bzw. sollen. 
-Grundsätzlich sind die \ring{ringe} Kreisscharen. Es gibt drei unterscheidbare Gruppen von Kreisscharen auf einem Torus: 
-\begin{enumerate}
-    \item Parallelkreise (poloidal)
-    \item Merididiane (toroidal) und 
-    \item Villarceau-Kreise.
-\end{enumerate}
+Grundsätzlich sind die \ring{ringe} Kreisscharen. 
 
+\parbox{\textwidth}{
+    Es gibt genau drei unterscheidbare Gruppen von Kreisscharen auf einem Torus: 
+    \begin{enumerate}
+        \item Parallelkreise (poloidal)
+        \item Merididiane (toroidal) und 
+        \item Villarceau-Kreise.
+    \end{enumerate}
+    }
+Diese drei Möglichkeiten betrachten wir im Folgenden etwas näher.
 
-\paragraph{Parallelkreise} entstehen durch poloidale Schnitte eines wie z.B. in \cref{fig:torus-parallele} abgebildeten Torus. Eine solche Anordnung ist denkbar, aber wenig plausibel, da die einzelnen Ringe dann eher Schreiben wären. Auch ist nicht zu erkennen, wie es beim Absturz der Station dann zu einer konzentrischen Anordnung gekommen sein sollte. 
+\paragraph{Parallelkreise} entstehen durch poloidale Schnitte eines wie z.B. in \cref{fig:torus-parallele} abgebildeten Torus. Eine solche Anordnung der \ring{ringe} ist denkbar, aber wenig plausibel, da die einzelnen Ringe dann eher Schreiben wären. Auch ist nicht zu erkennen, wie es beim Absturz der Station dann zu einer konzentrischen Anordnung gekommen sein sollte. 
 
 \begin{figure}[ht!]
     \centering
@@ -54,13 +86,19 @@ Dabei berühren sich hier im Inneren eben \ceva{core} und \ceva{clamp}; das pass
 
 \begin{figure}[ht!]
     \centering
-        \input{tikz-torus-meridiane}
+    % \begin{subfigure}{0.4\textwidth}
+    %     \input{tikz-torus-meridiane}
+    % \end{subfigure}
+    % \begin{subfigure}{0.4\textwidth}
+        \input{tikz-torus-meridiankreise2}
+    % \end{subfigure}
     \caption{Die \ring{ringe} als Meridiankreise auf dem Torus}
     \label{fig:torus-meridiane}
 \end{figure}
 
+Eine solche Anordnung erscheint dem archälogischen Befund recht gut zu entsprechen. Sie kann aber ihrerseits Produkt einer vorhergegangenen Translation aus einer komplexeren Struktur sein.
 
-Da der äußerere Äquator (Meridian) \ceva{creactive} enspricht, bedeutet eine Ausweitung der \ceva{creactivität} ein Anschwellen dieses Torus und somit Wachstum der Station; bildlich entspräche das in etwa der Inflation eines Rettungsrings. Dabei ist zu beachten, dass eine Vergrößerung des rotierenden Kreises ohne gleichzeitige Ausweitung des Rototaionsradius im Torus zu einem Verschwinden des innenliegenden Loches führen könnte. Dann wäre die Station gewissermaßen an ihrer eigenen \ceva{creactivität} erstickt.
+Da der äußerere Äquator (Meridian) des Torsus \ceva{creactive} enspricht, bedeutet eine Ausweitung der \ceva{creactivität} ein Anschwellen dieses Torus und somit Wachstum der Station; bildlich entspräche das in etwa der Inflation eines Rettungsrings. Dabei ist zu beachten, dass eine Vergrößerung des rotierenden Kreises ohne gleichzeitige Ausweitung des Rototaionsradius im Torus zu einem Verschwinden des innenliegenden Loches führen könnte. Dann wäre die Station gewissermaßen an ihrer eigenen \ceva{creactivität} erstickt.
 
 Unsere Darstellung in \cref{fig:torus-meridiane} zeigt die \ring{ringe} als Flächen. Tatsächlich sind sie natürlich selbst von höherer Diemension, also ihrerseits Tori. Es sollte sich wirklich um eine Schar von Tori, gewissermaßen um ein Bündel von Ringen, handeln.
 
@@ -88,12 +126,12 @@ Dieser Theorie zufolge sind die \ring{ringe} sind auf einem Torus in Form versch
 Es gibt keinen \ring{ring}, der einen bevorzugten Ort einnimmt. Da sie kongruent sind, sind sie flächen- und längengleich.
 
 
-Wie bereits oben müssen wir uns die Ringe nicht wie abgebildet vorstellen, sondern ihrerseits eher als eigenständige Tori oder Toroide. Ähnlich wie ein Torus (2D, eine Fläche) aus Villacreau-Kreisen "`zusammengesetzt"' vorgestellt werden kann, kann ein Toroid (3D, ein Körper, gewissermaßen ein "`ausgefüllter"' Torus) aus Scharen von Tori "`zusammengesetzt"' bzw. approximiert werden. 
+Wir müssen uns die Ringe nicht exakt wie abgebildet vorstellen, sondern ihrerseits eher als eigenständige Tori oder Toroide. Ähnlich wie ein Torus (2D, eine Fläche) aus Vil\-lac\-reau-Kreisen "`zusammengesetzt"' vorgestellt werden kann, kann ein Toroid (3D, ein Körper, gewissermaßen ein "`ausgefüllter"' Torus) aus Scharen von Tori "`zusammengesetzt"' bzw. approximiert werden. 
 Wir können uns also die \ring{ringe} in \cref{fig:villarceautorous} als eigene Tori vorstellen.
 Das setzt allerdings voraus, dass die \ring{ringe} eindeutig abgegrenzt sind gegeneinander: jeder \ring{ring} schließt sich nach einer vollen Umdrehung um die Mittelachse des Torus. 
 
 \paragraph{Verknoteter Torus}
-Lässt man diese Bedingung fallen, so kann man sich auch einen Torus vorstellen, bei dem jeder Kreis nach $306^o$ an den jeweils nächsten "`anschließt"', also einen "`verknoteten Torus"' bzw. \cevain{cnoten}, wie skizziert in \cref{fig:knottedtorus}.
+Lässt man die Bedingung fallen, dass jeder Ring kreisförmig und geschlossen ist, so kann man sich auch einen Torus vorstellen, bei dem jeder Kreis nach $306^o$ an den jeweils nächsten "`anschließt"', also einen "`verknoteten Torus"' bzw. \cevain{cnoten}, wie skizziert in \cref{fig:knottedtorus}.
 
 \begin{figure}
     \centering
@@ -126,9 +164,18 @@ Für jeden Torus gilt der Sieben-Farben-Satz: wie auch immer der Torus in Gebiet
 Es könnte insofern gut sein, dass $7$ \ring{ringe} eben Funktionsbereiche und nicht wirklich Kreise darstellt. 
 Erschwerend kommt hinzu, dass Tori wegzusammenhängend sind; es gibt also von jedem \ring{ring} einen Weg zu jedem anderen \ring{ring}. Damit werden die wiederholten Erwähnungen von Mobilität über die \ring{ringe} hinaus bzw. zwischen ihnen plausibel.
 
-Doch verlassen wir damit den Bereich der Empirie und begeben uns in das Reich reiner \cevain{cpeculation} bzw. reiner \cevain{cience}.
+Damit wäre die ursprüngliche Topologie ein gefärbter Torusknoten \cevain{cnoten}, mithin ein \cevain{mosaic}.
 
-Die weitere Erforschung dieser Topologie und die möglichen Bedeutungen für die energetische Effizienz des verschlungenen Miteinanders der sich ergänzenden \ring{ringe} ist eine Aufgabe ohne Endpunkt.
+\begin{newstuff}
+\lettrine{A}{n} dieser Stelle  verlassen wir  den Bereich der Empirie und begeben uns in das Reich reiner \cevain{cpeculation} bzw. purer \cevain{cience}.
+
+Die weitere Erforschung dieser Topologie und die möglichen Ramifikationen für die energetische Effizienz des verschlungenen Miteinanders der sich ergänzenden \ring{ringe} ist eine Aufgabe ohne \cevain{endpunct}.
+
+Uns bleibt der Hoffnung Ausdruck zu geben, dass \cevain{cünftige} Forscher die hier skizzierten Ansätze einmal zu höher Vollendung führen geworden haben werden sein können.
+
+\ceva{vielen dank für die beachtung aller sicherheitshinweise.}
+\end{newstuff}
+
 
 
 % Und das ist ein Bild schön genug, dieses Papier zu beschließen.

@@ -4,7 +4,7 @@
 \usepackage{calc}
 \usepackage{xcolor}
 \usepackage{fontspec}
-\newcommand{\ceva}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
+\newcommand{\cevapic}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
 \definecolor{eins}{HTML}{e7e7e8}   %% Ring 1 "core"     - weiß - Mittelpunkt, Ring um Mittelpunkt
 \definecolor{zwei}{HTML}{ed1c24}   %% Ring 2 "com"      - rot -  "Fenster" innen
 \definecolor{drei}{HTML}{fbad18}   %% Ring 3  "culture" - orange - fünf Module, quasi invertiert
@@ -31,7 +31,7 @@
             {clamp/sieben,carbon/sechs,cience/fuenf,creactiv/vier,culture/drei,com/zwei,core/white}
             {%
                 \draw[fill=\color,draw=none] (0:0) circle (13-1.5*\i);
-                \node [fill=\color!40,rounded corners,draw] at (-90:13-1.5*\i-0.8) {\ceva{\ring}};
+                \node [fill=\color!40,rounded corners,draw] at (-90:13-1.5*\i-0.8) {\cevapic{\ring}};
                 % \draw[color=\color!50,line width=45pt] (0:0) pic{carc=\i*51.418-25:\i*51.418+25:3:\ring};
             }%
             \draw[color=white,line width=122] (0:0) pic{carc=-21:21:2.5:};

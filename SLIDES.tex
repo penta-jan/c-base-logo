@@ -1,4 +1,5 @@
 \documentclass[t,dvipsnames]{beamer}
+\usepackage[ngerman]{babel}
 
 \usepackage{c-base-slides}
 
@@ -69,6 +70,9 @@
 \newcommand{\ceva}[1]{ % Leerzeichen notwendig
     {\fontspec{[ceva-c2.ttf]}#1}%
 }
+
+\newcommand{\cevapic}[1]{~{\fontspec{[ceva-c2.ttf]}#1}}
+
 \newcommand{\cevain}[1]{ % Leerzeichen notwendig!
     {\fontspec{[ceva-c2.ttf]}#1} $\mid$ \emph{#1}%
     \index{{\fontspec{[ceva-c2.ttf]}#1} $\mid$ #1}%
@@ -112,70 +116,93 @@
 
 
 
-\title{topologie der c-base}
-\author{penta}
+\title{Die 7 Ringe der \ceva{c-base}}
+\subtitle{Eine interpretative Exegese der ältesten Überlieferung im Lichte neuer Ausgrabungen und Schlussfolgerungen zur Topologie der Station vor ihrer Faltung}
+\author{\ceva{c-base cience ring}\\\ceva{\&}\\\ceva{penta - ms. cience}}
 % \date{February 2024}
 
 \begin{document}
 
 \frame{\titlepage}
 
-
-\begin{frame}{Ursprungsmythos}
-        \twofonts[\cite{cbasefund}]{
-    an einem verregneten nachmittag im august 1995 stolperte Hardy Krause über ein herumliegendes teil in einem bauschacht nördlich des alexanderplatzes in berlin.
-    [...]
-    % verärgert trat er nach dem außerordentlich harten objekt, welches ihm innnerhalb der nächsten halben stunde wohl eine schöne beule bescheren würde und fluchte.
-    % doch 
-    % dann betrachtete er das
-    [...]
-    % die beule verursachende 
-    % stück genauer und bemerkte neben einer revolutionären farbgebung (metallisch-violett) erstaunliches: 
-    auf diesem irgendwie nicht in diese umwelt passenden stück schrott waren schriftzeichen eingraviert
-    [...]:
-    % , die unbedingt einer genaueren untersuchung unterzogen werden mußten.
-    % 
-    % also grub ein team das fundstück aus und brachten es zu einem befreundeten radiochemiker. mit hilfe des kohlenstoff-14-tests (auch radiocarbon-methode genannt) fand er heraus, daß es, nach irdischem ermessen, mindestens 100.000 (!) jahre alt sein müßte.
-    % 
-    % außerdem enthielte es ein element mit einer ordnungszahl von über 200, das bisher, selbst mit den besten technischen möglichkeiten nicht herstellbar ist. es ist also älter als jedes bisher gefundene von menschen so kunstvoll bearbeitete metallstück und kann wahrscheinlich erst irgendwann in der fernen zukunft enstanden sein!?!
-
-    % auf seiner oberfläche sind zudem irdische schriftzeichen eingraviert
-    
-    c-base project - be future compatible.
-    }
+\begin{frame}{\cevain{forc\_ungsvorhaben}}
+    \begin{itemize}
+        \item Rekursion auf älteste Überlieferung (\cevain{c\_rift})
+        \item Schlussfolgerungen für Topologie der \ceva{c-tation}
+        \item Veröffentlichung \ceva{ccr} \cite{penta2024}
+        \item Leseexemplar liegt aus
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{The Motto}
-        Eingraviert in die Oberfläche des \ceva{urartefact} ist nach dieser Quelle die Inschrift 
-        
-    \linek[\cite{cbasefund}]{c-base project - be future compatible}  
+\begin{frame}{\cevain{QR}}
+    \includegraphics[height=0.618\textheight]{qr-7ringe.png}
     
-    Hier wird der Gedanke einer Vorwärtskompatiblität (\linekin{future compatible}) statt Rückwärtskompatiblität ausgedrückt. Wer diesem Ruf folgt, der richtet sein Handeln so ein, dass alles aus ihm hervorgehende Sein \linekin{be} soweit irgend möglich kompatibel zur Zukunft ist, also mit ihr und in ihr funktioniert.
 \end{frame}
 
-\begin{frame}{Periodisierung}
+\begin{frame}{Aktueller Befund / kanonische Darstellung}
     \resizebox{!}{0.8\textheight}{
-    \input{tikz-periodisierung}
+        \input{tikz-c-base}
+        }
+\end{frame}
+
+\begin{frame}{Periodisierung der Rekonstruktionsgeschichte}
+    \resizebox{0.9\textwidth}{!}{
+    \input{tikz-zeitstrahlzwei}
+    % \input{tikz-periodisierung}
     }
 \end{frame}
 
-\begin{frame}{Die kanonischen Schriften}
+\begin{frame}{Die kanonischen Schriften / \ceva{c\_rift})}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{r|lrl}
         \toprule
-        \multicolumn{2}{c}{Quelle} & Jahr & Epoche \\
+        \multicolumn{2}{c}{\cevain{c\_rift}} & Jahr & Epoche \\
         \midrule
-         \ceva{c-booc} & c-booc & 2015 & Übergang Mittelalter$\rightarrow$Neuzeit\\
-         \ceva{c-tour} & c-tour & 2006 & frühes Mittelalter \\
-         \ceva{starbase-manual7} & starbase-manual7 & 2003 & Frühzeit (?) \\
-         \ceva{logbuch now} & logbuch now & 2000 & Archaik\\
          \ceva{logbuch pre} & logbuch pre & 1995 & Archaik, Vorzeit \\
+         \ceva{logbuch now} & logbuch now & 2000 & Archaik\\
+         \ceva{starbase-manual7} & starbase-manual7 & 2003 & Frühzeit (?) \\
+         \ceva{c-tour} & c-tour & 2006 & frühes Mittelalter \\
+         \ceva{c-booc} & c-booc & 2015 & Übergang Mittelalter$\rightarrow$Neuzeit\\
          \bottomrule
     \end{tabular}
     }
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Textgrundlage}
+% \begin{frame}{Ursprungsmythos}
+%         \twofonts[\cite{cbasefund}]{
+%     an einem verregneten nachmittag im august 1995 stolperte Hardy Krause über ein herumliegendes teil in einem bauschacht nördlich des alexanderplatzes in berlin.
+%     [...]
+%     % verärgert trat er nach dem außerordentlich harten objekt, welches ihm innnerhalb der nächsten halben stunde wohl eine schöne beule bescheren würde und fluchte.
+%     % doch 
+%     % dann betrachtete er das
+%     [...]
+%     % die beule verursachende 
+%     % stück genauer und bemerkte neben einer revolutionären farbgebung (metallisch-violett) erstaunliches: 
+%     auf diesem irgendwie nicht in diese umwelt passenden stück schrott waren schriftzeichen eingraviert
+%     [...]:
+%     % , die unbedingt einer genaueren untersuchung unterzogen werden mußten.
+%     % 
+%     % also grub ein team das fundstück aus und brachten es zu einem befreundeten radiochemiker. mit hilfe des kohlenstoff-14-tests (auch radiocarbon-methode genannt) fand er heraus, daß es, nach irdischem ermessen, mindestens 100.000 (!) jahre alt sein müßte.
+%     % 
+%     % außerdem enthielte es ein element mit einer ordnungszahl von über 200, das bisher, selbst mit den besten technischen möglichkeiten nicht herstellbar ist. es ist also älter als jedes bisher gefundene von menschen so kunstvoll bearbeitete metallstück und kann wahrscheinlich erst irgendwann in der fernen zukunft enstanden sein!?!
+
+%     % auf seiner oberfläche sind zudem irdische schriftzeichen eingraviert
+    
+%     % c-base project - be future compatible.
+%     }
+% \end{frame}
+
+% \begin{frame}{The Motto}
+%         Eingraviert in die Oberfläche des \ceva{urartefact} ist nach dieser Quelle die Inschrift 
+        
+%     \linek[\cite{cbasefund}]{c-base project - be future compatible}  
+    
+%     Hier wird der Gedanke einer Vorwärtskompatiblität (\linekin{future compatible}) statt Rückwärtskompatiblität ausgedrückt. Wer diesem Ruf folgt, der richtet sein Handeln so ein, dass alles aus ihm hervorgehende Sein \linekin{be} soweit irgend möglich kompatibel zur Zukunft ist, also mit ihr und in ihr funktioniert.
+% \end{frame}
+
+
+
+\begin{frame}[allowframebreaks]{\ceva{c\_rift}}
     \twofonts[\cite{cbasestarbasemanual}]{
     % 1995 wurden unter Berlin-Mitte die Überreste einer 4,5 Milliarden Jahre alten Raumstation entdeckt. 
     Erste Forschungen ergaben, daß sich die c-för\-mi\-ge Raumstation mit ihrem Mittelpunkt unter dem heutigen Alexanderplatz \emph{befinden muß} und aus 7 Ringen besteht.
@@ -236,22 +263,38 @@
     }
 \end{frame}
 
+\begin{frame}{Besondere \ceva{ringe}}
+    \begin{itemize}
+        \item Verbindung von \ceva{core} und \ceva{clamp}
+        \item Sonderstellung von \ceva{creactive} als
+        \item[] \cevain{most powerful part}
+    \end{itemize}
+
+    \vspace{2ex}
+
+    Welche Topolgie ist \cevain{urcprünglich}?
+\end{frame}
 
 \begin{frame}{Verflachung}
 
-    Die aktuelle Form ist Folge des den Absturzes der Raumstation, und vermutlich ist die gewissermaßen "`flache"' Struktur, die wir bei den bisherigen Rekonstruktionsphasen ausgemacht haben, eine zweidimensionale Projektion der eigentlich mehrdimensionalen Raumstation. 
-    
-    Diese Frage stellt sich: welche Topologie hatten die \ring{ringe}, welche Topologie hatte die Station vor dem Absturz, und welche strebt sie damit an??
-    
-    % \paragraph{Ringförmige Anordnung der Ringe}
-    Wir haben gesehen, dass sich \ceva{clamp} und \ceva{core} berühren bzw. über eine Einstein-Rosen-Brücke verbunden sind. Daraus folgern wir eine (ursprünglich, zukünftig) \emph{ringförmige Anordnung der Ringe.}  
+    \begin{itemize}
+        \item Aktuelle Form Folge des Absturzes (\ceva{abcturc})
+        \item Ursprüngliche Form komplexer (\ceva{complex})
+        \item Verbindung von \ceva{core} und \ceva{clamp} (ER-Brücke)
+        \item Besondere Rolle von \ceva{creactive}
+    \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Ringförmige Anordnung der \ring{ringe}}
+\begin{frame}[allowframebreaks]{Ringförmige Anordnung der \ring{ringe}}
     \resizebox{!}{0.8\textheight}{
      \input{tikz-ringring}
     }
+    \framebreak
+    \resizebox{!}{0.8\textheight}{
+     \input{tikz-ringe-olympisch}
+    }
+    
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Rotationtorus}
@@ -275,27 +318,27 @@
     \end{enumerate}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Parallelkreise}
+\begin{frame}{Parallelkreise}
     
 
-   {Parallelkreise} entstehen durch poloidale Schnitte eines   Torus. 
-    Eine solche Anordnung ist denkbar, aber wenig plausibel, da die einzelnen Ringe dann eher Schreiben wären. Auch ist nicht zu erkennen, wie es beim Absturz der Station dann zu einer konzentrischen Anordnung gekommen sein sollte. 
+   % {Parallelkreise} entstehen durch poloidale Schnitte eines   Torus. 
+   %  Eine solche Anordnung ist denkbar, aber wenig plausibel, da die einzelnen Ringe dann eher Schreiben wären. Auch ist nicht zu erkennen, wie es beim Absturz der Station dann zu einer konzentrischen Anordnung gekommen sein sollte. 
 
-    \framebreak
+   %  \framebreak
     
     \resizebox{!}{0.8\textheight}{
         \input{tikz-torus-parallele}
         }
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Meridiankreise}
+\begin{frame}{Meridiankreise}
 
         
-  {Meridiankreise} entstehen als toridale Schnitte des Rotationstorus. 
-    Eine Anodrnung der \ring{ringe} als Meridiankreise ist möglich.  
-    Dabei berühren sich hier im Inneren eben \ceva{core} und \ceva{clamp}; das passt zu unserer Interpretation des Kanons von der Topologie der Station als Torus mit einem innenliegenden Wurmloch. In diesem berühren sich innen \ceva{core} und \ceva{clamp}; außen liegt \ceva{creactiv}.
+  % {Meridiankreise} entstehen als toridale Schnitte des Rotationstorus. 
+  %   Eine Anodrnung der \ring{ringe} als Meridiankreise ist möglich.  
+  %   Dabei berühren sich hier im Inneren eben \ceva{core} und \ceva{clamp}; das passt zu unserer Interpretation des Kanons von der Topologie der Station als Torus mit einem innenliegenden Wurmloch. In diesem berühren sich innen \ceva{core} und \ceva{clamp}; außen liegt \ceva{creactiv}.
 
-    \framebreak
+  %   \framebreak
     \resizebox{!}{0.8\textheight}{
             \input{tikz-torus-meridiane}
             }
@@ -308,12 +351,12 @@
 
 % Unsere Darstellung in \cref{fig:torus-meridiane} zeigt die \ring{ringe} als Flächen. Tatsächlich sind sie natürlich selbst von höherer Dimension, also ihrerseits Tori. Es sollte sich wirklich um eine Schar von Tori, gewissermaßen um ein Bündel von Ringen, handeln.
 
-\begin{frame}[allowframebreaks]{Villarcreau-Kreise}
+\begin{frame}{Villarcreau-Kreise}
     
 
-    Villarceau-Kreise  entstehen topologisch (paarweise) durch den Schnitt einer doppelberührenden Ebene mit dem Torso.
+    % Villarceau-Kreise  entstehen topologisch (paarweise) durch den Schnitt einer doppelberührenden Ebene mit dem Torso.
 
-    \framebreak
+    % \framebreak
 
     \resizebox{!}{0.8\textheight}{
         \includesvg{Torus-vill-point.svg}
@@ -321,83 +364,115 @@
     
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Villarcreau-Ringe}
+\begin{frame}{Villarcreau-\ceva{ringe}}
     
-    Es lässt sich also eine Schar von Kreisen auf einem Torus finden, die sich nicht schneiden, die perfekt kreisförmig und die untereinander kongruent sind. 
-    % \cref{fig:villarceautorous} zeigt eine Annäherung, indem hier ein Torus mit $21\times 21$ Flächen belegt wurde.
+    % Es lässt sich also eine Schar von Kreisen auf einem Torus finden, die sich nicht schneiden, die perfekt kreisförmig und die untereinander kongruent sind. 
+    % % \cref{fig:villarceautorous} zeigt eine Annäherung, indem hier ein Torus mit $21\times 21$ Flächen belegt wurde.
 
-    \framebreak
+    % \framebreak
     \resizebox{0.8\textheight}{!}{
                 \input{tikz-torus-villarceau-ringe1}            
                 }
 
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Verknoteter Torus}
+\begin{frame}{Ringförmige Anordnung der \ring{ringe}}
+    % \resizebox{!}{0.8\textheight}{
+    %  \input{tikz-ringring}
+    % }
+    % \framebreak
+    \resizebox{!}{0.8\textheight}{
+     \input{tikz-ringe-olympisch}
+    }
+    
+\end{frame}
+
+\begin{frame}{\ring{Ringe} in sich geschossen?}
+    \begin{itemize}
+        \item keine ausschließenden Kategorien
+        \item \ceva{c\_rift} betont Übergänge
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Torusknoten (\ceva{cnoten})}
     
 
-    Die Ringe sind auf einem Torus in Form verschlungener Bänder angeordnet. Sie winden sich um das Zentrum des Torus und zugleich um den Körper des Torus selbst. 
-    Es gibt keinen \ring{ring}, der einen bevorzugten Ort einnimmt. Da sie kongruent sind, sind sie flächen- und längengleich.
+    % Die Ringe sind auf einem Torus in Form verschlungener Bänder angeordnet. Sie winden sich um das Zentrum des Torus und zugleich um den Körper des Torus selbst. 
+    % Es gibt keinen \ring{ring}, der einen bevorzugten Ort einnimmt. Da sie kongruent sind, sind sie flächen- und längengleich.
 
-    \framebreak
+    % \framebreak
     
-    Wie bereits oben müssen wir uns die Ringe nicht wie abgebildet vorstellen, sondern ihrerseits eher als eigenständige Tori oder Toroide. Ähnlich wie ein Torus (2D, eine Fläche) aus Villacreau-Kreisen "`zusammengesetzt"' vorgestellt werden kann, kann ein Toroid (3D, ein Körper, gewissermaßen ein "`ausgefüllter"' Torus) aus Scharen von Tori "`zusammengesetzt"' bzw. approximiert werden. 
+    % Wie bereits oben müssen wir uns die Ringe nicht wie abgebildet vorstellen, sondern ihrerseits eher als eigenständige Tori oder Toroide. Ähnlich wie ein Torus (2D, eine Fläche) aus Villacreau-Kreisen "`zusammengesetzt"' vorgestellt werden kann, kann ein Toroid (3D, ein Körper, gewissermaßen ein "`ausgefüllter"' Torus) aus Scharen von Tori "`zusammengesetzt"' bzw. approximiert werden. 
 
-    \framebreak
+    % \framebreak
     
-    Wir können uns also die \ring{ringe}  als eigene Tori vorstellen.
-    Das setzt allerdings voraus, dass die \ring{ringe} eindeutig abgegrenzt sind gegeneinander: jeder \ring{ring} schließt sich nach einer vollen Umdrehung um die Mittelachse des Torus. 
+    % Wir können uns also die \ring{ringe}  als eigene Tori vorstellen.
+    % Das setzt allerdings voraus, dass die \ring{ringe} eindeutig abgegrenzt sind gegeneinander: jeder \ring{ring} schließt sich nach einer vollen Umdrehung um die Mittelachse des Torus. 
 
-    \framebreak
+    % \framebreak
     
-    % \paragraph{Verknoteter Torus}
-    Lässt man diese Bedingung fallen, so kann man sich auch einen Torus vorstellen, bei dem jeder Kreis nach $306^o$ an den jeweils nächsten "`anschließt"', also einen "`verknoteten Torus"' bzw. \cevain{cnoten}.
+    % % \paragraph{Verknoteter Torus}
+    % Lässt man diese Bedingung fallen, so kann man sich auch einen Torus vorstellen, bei dem jeder Kreis nach $306^o$ an den jeweils nächsten "`anschließt"', also einen "`verknoteten Torus"' bzw. \cevain{cnoten}.
 
-    \framebreak
+    % \framebreak
 
     \resizebox{0.8\textwidth}{!}{
             \includegraphics{KnottedTorus.png}
         }
 
-    \framebreak    
-    Dann gäbe es genau einen parallelen Schnitt durch den \cevain{cnoten}, der  ein Bild wie oben  abgibt, obwohl alle \ring{ringe} und damit die Station als Ganzes ein einzelner, gewissermaßen siebenfach "`gewickelter"' Torus wäre, nämlich ein Torusknoten.
+    % \framebreak    
+    % Dann gäbe es genau einen parallelen Schnitt durch den \cevain{cnoten}, der  ein Bild wie oben  abgibt, obwohl alle \ring{ringe} und damit die Station als Ganzes ein einzelner, gewissermaßen siebenfach "`gewickelter"' Torus wäre, nämlich ein Torusknoten.
 
-    \framebreak
+    % \framebreak
 
-    Das erklärt auch die Doppelung der Zahl $7$. Es gibt $7$ \ring{ringe} und (jeweils) $7$ \ceva{deccs}. Eine solche toroidale \ceva{cnoten}-Architektur bietet eine Erklärung für die Quasi-Identität von \ring{ringen} und \ceva{deccs}.
-
-\end{frame}
-
-\begin{frame}{\ceva{core} als Torusknoten}
-    
-
-    Angesichts der Bedeutung toroidaler Topologie für Fusionsreaktoren vermuten wir, dass wir hier der Topologie des \ceva{Möbius-band-accelerators} bzw. \ceva{Mino-reactors} bzw. \ceva{Cybernetischen Quecksilber-Reaktors}  auf der Spur sind (vgl.~\cref{sec:core}). \ceva{core} selber ist eine komprimierte Spiegelung der Stationsarchitektur als Ganzes. Hier entsteht durch intensive \cevain{vercnotung} die \cevain{complette verwirrung}, die für das Neuerwachen der Station nötig ist.
+    % Das erklärt auch die Doppelung der Zahl $7$. Es gibt $7$ \ring{ringe} und (jeweils) $7$ \ceva{deccs}. Eine solche toroidale \ceva{cnoten}-Architektur bietet eine Erklärung für die Quasi-Identität von \ring{ringen} und \ceva{deccs}.
 
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Die Raumstation als gefärbter Torusknoten}
+
+% \begin{frame}{\ceva{core} als Torusknoten}
     
-    Für jeden Torus gilt der Sieben-Farben-Satz: wie auch immer der Torus in Gebiete eingeteilt ist, es genügen genau $7$ Farben, die entstehende Landkarte einzufärben. Wir sehen hier eine topologische Begründung für die Siebenzahl der \ring{ringe}. Es könnte also eine Raumstation, deren Topologie ein (verknoteter) Torus ist, beliebig eingeteilt werden: $7$ verschiedene Kategorien von Habitaten würden genügen, um sicherzustellen, dass neben jedem Habitat ein jeweils anderes Habitat anschließt. Die Chromatische Zahl der \ceva{c-base} ist mithin ebenfalls $7$.
+
+%     Angesichts der Bedeutung toroidaler Topologie für Fusionsreaktoren vermuten wir, dass wir hier der Topologie des \ceva{Möbius-band-accelerators} bzw. \ceva{Mino-reactors} bzw. \ceva{Cybernetischen Quecksilber-Reaktors}  auf der Spur sind (vgl.~\cref{sec:core}). \ceva{core} selber ist eine komprimierte Spiegelung der Stationsarchitektur als Ganzes. Hier entsteht durch intensive \cevain{vercnotung} die \cevain{complette verwirrung}, die für das Neuerwachen der Station nötig ist.
+
+% \end{frame}
+
+\begin{frame}[allowframebreaks]{Gefärbter Torusknoten}
+    
+    Für jeden Torus gilt der 
+    Sieben-Farben-Satz: 
+    % wie auch immer der Torus in Gebiete eingeteilt ist, es genügen genau $7$ Farben, die entstehende Landkarte einzufärben. Wir sehen hier eine topologische Begründung für die Siebenzahl der \ring{ringe}. Es könnte also eine Raumstation, deren Topologie ein (verknoteter) Torus ist, beliebig eingeteilt werden: $7$ verschiedene Kategorien von Habitaten würden genügen, um sicherzustellen, dass neben jedem Habitat ein jeweils anderes Habitat anschließt. Die Chromatische Zahl der \ceva{c-base} ist mithin ebenfalls $7$.
     
     \begin{equation}\label{eq:chromazahl}
         \chi\left( \text{\ceva{c}}
         \right) = 7
     \end{equation}
 
-    \framebreak
-    
-    Es könnte insofern gut sein, dass $7$ \ring{ringe} eben Funktionsbereiche und nicht wirklich Kreise darstellt. 
-    Erschwerend kommt hinzu, dass Tori wegzusammenhängend sind; es gibt also von jedem \ring{ring} einen Weg zu jedem anderen \ring{ring}. Damit werden die wiederholten Erwähnungen von Mobilität über die \ring{ringe} hinaus bzw. zwischen ihnen plausibel.
+    \begin{itemize}
+        \item Torus einteilen in Flächen (Module)
+        \item Farbe von jeder Fläche anders als angrenzende
+    \end{itemize}
 
-    \framebreak
+    $\rightarrow$ \ceva{c-tation} möglicherweise ein \cevain{mosaic}
+
+    % \framebreak
+    
+    % Es könnte insofern gut sein, dass $7$ \ring{ringe} eben Funktionsbereiche und nicht wirklich Kreise darstellt. 
+    % Erschwerend kommt hinzu, dass Tori wegzusammenhängend sind; es gibt also von jedem \ring{ring} einen Weg zu jedem anderen \ring{ring}. Damit werden die wiederholten Erwähnungen von Mobilität über die \ring{ringe} hinaus bzw. zwischen ihnen plausibel.
+
+    % \framebreak
         
-    Doch verlassen wir damit den Bereich der Empirie und begeben uns in das Reich reiner \cevain{cpeculation} bzw. rein theoretischer \ceva{cience}.
+    % Doch verlassen wir damit den Bereich der Empirie und begeben uns in das Reich reiner \cevain{cpeculation} bzw. rein theoretischer \ceva{cience}.
 
-    \framebreak
+    % \framebreak
     
-    Die weitere Erforschung dieser Topologie und die möglichen Bedeutungen für die energetische Effizienz des verschlungenen Miteinanders der sich ergänzenden \ring{ringe} ist eine Aufgabe ohne Endpunkt.
+    % Die weitere Erforschung dieser Topologie und die möglichen Bedeutungen für die energetische Effizienz des verschlungenen Miteinanders der sich ergänzenden \ring{ringe} ist eine Aufgabe ohne Endpunkt.
 
 \end{frame}    
+
+\begin{frame}{\cevain{mosaic}}
+    \includegraphics[height=0.8\textheight]{aufkleber-donut-von-homer-simpson.jpg}
+\end{frame}
 
 % Und das ist ein Bild schön genug, dieses Papier zu beschließen.
 
@@ -406,6 +481,37 @@
     
 %     -- be future compatible --
 % \end{center}
+
+\begin{frame}{Merci}
+    \ceva{vielen dank für die beachtung aller sicherheitshinweise}
+
+    \vspace{3ex}
+
+    
+    \cevain{c\_prechc\_tunde} 
+    \begin{description}
+        \item[time:] 
+        Setting Orange 42:23 o'clock M.T.
+    \\ bitte Voranmeldung: \href{mailto:penta@c-base.org}{penta@c-base.org}
+        \item[space:] in the bottom of a locked filing cabinet stuck in a disused lavatory with a sign on the door saying `Beware of the Leopard', local planning department, Alpha Centauri
+    \end{description}
+    
+
+    \vspace{3ex}
+        
+    \begin{itemize}
+        \item noch Fragen?
+    \end{itemize}
+
+
+    
+\end{frame}
+
+\begin{frame}{Die \ceva{Lösung}}
+    \resizebox{\textwidth}{!}{
+    \fontspec{Bebas Neue}42
+    }
+\end{frame}
 
 \begin{frame}[allowframebreaks]{Literature}
     % \nocite{*}

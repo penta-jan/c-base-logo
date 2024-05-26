@@ -20,10 +20,11 @@
 \usepackage{svg}
 \usepackage{subcaption}
 \usepackage{mdframed}
+\usepackage{subcaption}
 \usepackage{imakeidx}
 \makeindex
 
-\usepackage[firstpageonly=true]{draftwatermark}
+% \usepackage[firstpageonly=true]{draftwatermark}
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -36,6 +37,12 @@
 \usepackage{pst-solides3d}
 
 \usepackage[hidelinks]{hyperref}
+\hypersetup{
+    pdftitle={Die 7 Ringe der c-base},
+    pdfsubject={Eine interpretative Exegese der ältesten Überlieferung im Lichte neuer Ausgrabungen und Schlussfolgerungen zur Topologie der Station vor ihrer Faltung},
+    pdfauthor={c-base cience ring, penta},
+    pdfkeywords={c-base} 
+    }
 
 \usepackage{cleveref}
 
@@ -57,6 +64,10 @@
 \definecolor{sechs}{HTML}{11357e}  %% Ring 6 "carbon" -  indigo - viele "Fenster" außen
 \definecolor{sieben}{HTML}{000000} %% Ring 7 "clamp" -  schwarz, c-förmig
 \definecolor{cbase}{HTML}{222222}  %% Körper der Raumstation
+
+% \definecolor{cevacol}{HTML}{4B0082}  %% indigo pur -  Färbung der Begriffe in ceva und linear konstrukt
+% \definecolor{cevacol}{HTML}{0089d0}  %% cyan (blau) -  Färbung der Begriffe in ceva und linear construkt
+\definecolor{cevacol}{HTML}{000000}  %% Färbung der Begriffe in ceva und linear construkt
 
 \newcommand{\noun}[1]{\textsc{#1}}
 
@@ -81,22 +92,23 @@
 }
 
 \newcommand{\ceva}[1]{ % Leerzeichen notwendig
+    {\color{cevacol}\fontspec{[ceva-c2.ttf]}#1}%
+}
+\newcommand{\cevapic}[1]{ % Leerzeichen notwendig
     {\fontspec{[ceva-c2.ttf]}#1}%
 }
 \newcommand{\cevain}[1]{ % Leerzeichen notwendig!
-    {\fontspec{[ceva-c2.ttf]}#1} $\mid$ \emph{#1}%
-    \index{{\fontspec{[ceva-c2.ttf]}#1} $\mid$ #1}%
+    {\color{cevacol}\fontspec{[ceva-c2.ttf]}#1} $\mid$ \emph{#1}%
+    \index{{\color{cevacol}\fontspec{[ceva-c2.ttf]}#1} $\mid$ #1}%
 }
-% \newcommand{\cevalong}[1]{ {\fontspec{[ceva-c2.ttf]}#1} | \emph{#1}}
 
 \newcommand{\ring}[1]{ % Leerzeichen notwendig
-    {\fontspec{[ceva-c2.ttf]}#1}%
-    % \index{{\fontspec{[ceva-c2.ttf]}#1} $\mid$ #1}
+    {\color{cevacol}\fontspec{[ceva-c2.ttf]}#1}%
 }
 
 \newcommand{\twofonts}[2][]{
 \begin{quote} 
-    {\fontspec{[ceva-c2.ttf]}#2}
+    {\color{cevacol}\fontspec{[ceva-c2.ttf]}#2}
     \par
     #2\hfill#1
 \end{quote}
@@ -104,30 +116,30 @@
 
 \newcommand{\linek}[2][]{
 \begin{quote} 
-    {\fontspec{[linek.ttf]}#2}
+    {\color{cevacol}\fontspec{[linek.ttf]}#2}
     \par
-    {\fontspec{[ceva-c2.ttf]}#2}
+    {\color{cevacol}\fontspec{[ceva-c2.ttf]}#2}
     \par
     #2\hfill#1
 \end{quote}
 }
 
 \newcommand{\linekin}[1]{ % Leerzeichen notwendig!
-    {\fontspec{[linek.ttf]}#1} $\cdot$ %
+    {\color{cevacol}\fontspec{[linek.ttf]}#1} $\cdot$ %
     % {\fontspec{[ceva-c2.ttf]}#1} $\mid$
     \emph{#1}%
-    \index{{\fontspec{[linek.ttf]}#1} 
+    \index{{\color{cevacol}\fontspec{[linek.ttf]}#1} 
     % $\cdot$ {\fontspec{[ceva-c2.ttf]}#1} 
     $\mid$ #1}%
 }
 \newcommand{\linekonly}[1]{ % Leerzeichen notwendig!
-    {\fontspec{[linek.ttf]}#1}%
+    {\color{cevacol}\fontspec{[linek.ttf]}#1}%
 }
 
 
 \newenvironment{newstuff}
     {\par\bigskip\hrule}
-    {\hfill{\footnotesize{[penta]}}
+    {\hfill{\footnotesize{[p]}}
     \par
     \medskip    
     \hrule
@@ -136,8 +148,9 @@
 
 
 \title{
-    \ceva{die 7 ringe der c-base} \\
-    Die 7 Ringe der c-base%\\ Eine Exegese%\\\vspace{2ex}\\ Eine Untersuchung der Primärquellen
+    {\fontspec{[ceva-c2.ttf]}die 7 ringe der c-base} \\
+    Die 7 Ringe der c-base\\[0.2em]\Large{
+    Eine interpretative Exegese der ältesten Überlieferung im Lichte neuer Ausgrabungen und Schlussfolgerungen zur Topologie der Station vor ihrer Faltung}
     }
 
 \author{
@@ -148,7 +161,7 @@
     }
 
 
-% \date{May 2024}
+\date{25. Mai 2024}
 
 \begin{document}
 
@@ -176,7 +189,7 @@
     
     Unser eigener Text bzw. \cevain{blurb} ist ein akribischer exegetischer Kommentar aus Sicht des aktuellen Wissensstandes im Lichte neuer Ausgrabungen.   
     
-    Diese Arbeit bzw. \cevain{arbyte} leistet einen wissenschaftlichen Beitrag \mbox{(\ceva{cience})} zum besseren Verständnis von Funktion und Topologie der multidimensionalen Station \emph{from first principles}. Zum Schluss präsentieren wir eine neue Idee zur Topologie der Ringe und damit der Station.
+    Diese Arbeit bzw. \cevain{arbyte} leistet einen wissenschaftlichen Beitrag \mbox{(\ceva{cience})} zum besseren Verständnis von Funktion und Topologie der multidimensionalen Station \emph{from first principles}. Zum Schluss präsentieren wir eine neue Idee zur Faltung der Ringe und damit der Station.
     
     Die Raumstation ist ein  "`autopoietisches"', also selbsterschaffendes, System; sie (re)kon\-stru\-iert sich selbst. Dieser Prozess ist unabgeschlossen~\cite{cbasebook} und vermutlich sogar ergebnisoffen. Alles, was wir bereits über die Raumstation wissen, ist temporal gebunden und kann durch neue Erkenntnisse und weitere Entwicklungen überholt werden. 
     
@@ -187,7 +200,7 @@
 
 \twofonts[\cite{cbasebook}~S.~47]{Vielen Dank für die Beachtung\\ aller Sicherheitshinweise}
 
-\hfill Berlin, 2024\par\hfill \cevain{penta}
+\hfill \ceva{c-base}, \today\par\hfill \cevain{penta}
 
 \clearpage
 
@@ -216,13 +229,15 @@
 
 \clearpage
 
-\chapter{Die 7 Ringe}
+\chapter{Die 7 Ringe}\label{sec:ringe}
 
-Die kanonische Literatur über diese \ring{ringe} wird im Folgenden wiedergegeben und die Funktion der \ring{ringe} anschließend beschrieben. 
+Die kanonische Literatur über diese \ring{ringe} wird im Folgenden wiedergegeben und die Funktion der \ring{ringe} im Lichte der \cevain{cukunftsarcheölogie} genauer beschrieben. 
 
-Da unser Fokus auf der Funktion innerhalb des autopoietischen Systems \ceva{c-base} liegt, wird auf eine detaillierte Beschreibung einzelner Projekte, Module, Artefakte, Module und Bewohner wird verzichtet. 
+Da unser Fokus auf der Funktion innerhalb des autopoietischen Systems \ceva{c-base} liegt, wird auf eine detaillierte Beschreibung einzelner Projekte, Module, Artefakte, Module und Bewohner verzichtet. 
     
 Eine sehr gute Übersicht über ausgewählte einzelne Projekte, Aggregate, Artefakte und Module bietet das kanonische \ceva{c-booc}~\cite{cbasebook}. Zur Funktion, Geschichte und Ausgrabungsgeschichte der Station und des Rolle des Vereins c-base e.V. sei  \ceva{Pressemappe}~\cite{cbasepressemap} empfohlen.
+
+Unser Rundgang durch die Ringe bzw. den Aussagen in der \ceva{c\_rift} wird in der Exegese einiges zutage fördern, aus dem wir anschließend in \cref{sec:weiteres} Folgerungen ableiten.
 
 \clearpage
 
@@ -268,9 +283,39 @@ Eine sehr gute Übersicht über ausgewählte einzelne Projekte, Aggregate, Artef
     
 \endgroup
 
-\chapter{Weiterführende Überlegungen}
+\chapter{Weiterführende Überlegungen}\label{sec:weiteres}
 
-\input{fazit}
+
+Unser Rundgang durch die \ring{ringe} in \cref{sec:ringe}hat gezeigt, dass die Funktion jedes einzelnen \ring{rings} nur aus dem komplexen Zusammenspiel mit den anderen  verstanden werden kann. 
+
+% Sie bestehen aus Modulen, die ihrerseits auf \ceva{decc}s angeordnet sind.
+
+Die \cevain{c-tation} funktioniert insgesamt als Computer in einem Selbst\-fin\-dungs-, Selbst\-er\-fin\-dungs- und Rekonstruktionsprozess (Autopoiesis); sie erschafft sich durch die von ihr berufene \cevain{crew} selbst, durchaus auch durch Versuch und Irrtum, hin auf das Ziel das zu werden, was sie war und was sie sein wird. 
+
+% Daher ist das Komplexitätsmaß auf dieser Ebene zumindest
+% \begin{equation}
+%     T(n) = \mathcal{O} (n!) > 7! = 5040
+% \end{equation}
+% - und das ungeachtet des Umstandes, dass jeder \ring{ring} aus diversen Modulen und diese aus Aggregaten als jeweiligen Subsystemen besteht und sich so weiter ausdifferenziert. 
+
+% Wir haben es  mit einem hochkomplexen, selbstreferentiellen und autopoietischen System zu tun, das insgesamt mehr Zustände annehmen kann, als sich im bekannten Universum abbilden ließen. Damit ist das System insgesamt ein mögliches Spiegelbild des Restuniversums und bringt selbst in seiner Autopoiesis unendlich viele Welten hervor.
+
+Die Exegese der Aussagen der kanonischen Schriften über die einzelnen \ceva{ringe} hat darüber hinaus unter anderem ergeben, dass 
+\begin{enumerate}
+    \item die \ring{ringe} Funktionen eher als topologische Orte bezeichnen;
+    \item die \ring{ringe} aus \ceva{Modulen} bestehen, die  zwischen den \ring{ringen} beweglich sind,
+    \item \ceva{creactive} eine Mittel- bzw. Äquatorialstellung einnimmt und zugleich besonders \cevain{powerful} ist;
+    \item \ceva{core} und \ceva{clamp} über eine Einstein-Rosen-Brücke verbunden sind.
+\end{enumerate}
+
+
+
+% Daraus lassen sich einige Überlegungen zur urpsprünglichen, aktuellen und finalen Topologie der Station ableiten.
+
+\clearpage
+
+
+% \input{fazit}
 
 \input{stationsmathematik}
 
@@ -298,10 +343,11 @@ Eine sehr gute Übersicht über ausgewählte einzelne Projekte, Aggregate, Artef
 \fancyhead[LO]{Literatur}\label{sec:literatur}
 \fancyhead[RO]{Literatur}\addcontentsline{toc}{chapter}{Literatur}
 \printbibliography
- 
 
-
-\end{document}
-
+% \clearpage
+% \thispagestyle{empty}
+% \vfill
+% Diese \cevain{arbyte} steht unter der Lizenz \texttt{CC:BY:NC}.
+% \include{back}
 
 \end{document}
